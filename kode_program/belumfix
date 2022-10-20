@@ -1,6 +1,13 @@
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
+#define ADMIN_RT 10000
+#define ADMIN_N 12500
+#define DENDA 25000
+
+void cobaLagi(), totalBiayaE34(), totalBiayaE33(), totalBiayaE32(), totalBiayaE31(), totalBiayaE24(), totalBiayaE23(), totalBiayaE22(), totalBiayaE21(), totalBiayaE14(), totalBiayaE13(), totalBiayaE12(), totalBiayaE11(), totalBiayaD54(), totalBiayaD53(), totalBiayaD52(), totalBiayaD51(), totalBiayaD44(), totalBiayaD43(), totalBiayaD34(), totalBiayaD33(), totalBiayaD24(), totalBiayaD23(), totalBiayaD14(), totalBiayaD13(), totalBiayaD42(), totalBiayaD41(), totalBiayaD32(), totalBiayaD31(), totalBiayaD22(), totalBiayaD21(), totalBiayaD12(), totalBiayaD11(), niaga(), nonNiagaTanpaBersubsidi(), nonNiagaBersubsidi(), menuUtama(), namaKelompok(), namaProgram();
+
+int pemakaianAir();
 
 int main()
 {
@@ -12,10 +19,13 @@ int main()
 
 void namaProgram()
 {
+    char enter[2];
     printf("|| ================================================== ||\n");
-    printf("||               Program PDAM Blangkon                ||\n");
+    printf("||                    Program PDAM                    ||\n");
+    printf("||               PT.Blangkon Sejahtera                ||\n");
     printf("|| ================================================== ||\n");
-    printf("Tekan Enter untuk melanjutkan program!");
+    printf("||       Tekan Enter untuk melanjutkan program!       ||\n");
+    printf("|| ================================================== ||\n");
     scanf("%[^\n]", &enter);
     system("clear");
 }
@@ -64,7 +74,9 @@ void menuUtama()
         niaga();
         break;
     default:
-        printf("Maaf, input Anda salah. Silahkan ulangi!\n");
+        printf("|| ================================================== ||\n");
+        printf("||       Maaf Input anda salah, Silahkan ulangi !     ||\n");
+        printf("|| ================================================== ||\n");
         menuUtama();
         break;
     }
@@ -74,7 +86,7 @@ void nonNiagaBersubsidi()
 {
     int menu;
     printf("|| ==================================================== ||\n");
-    printf("||                  Kelompok Pelanggan                  ||\n");
+    printf("||                   Jenis Pelanggan                    ||\n");
     printf("|| ==================================================== ||\n");
     printf("|| 1. Rumah Tangga A1                                   ||\n");
     printf("|| 2. Rumah Tangga A2                                   ||\n");
@@ -100,16 +112,19 @@ void nonNiagaBersubsidi()
     case 4:
         nnbA4();
     default:
-        printf("Maaf, input Anda salah. Silahkan ulangi!\n");
+        printf("|| ================================================== ||\n");
+        printf("||       Maaf Input anda salah, Silahkan ulangi !     ||\n");
+        printf("|| ================================================== ||\n");
         nonNiagaBersubsidi();
         break;
     }
 }
+
 void nonNiagaTanpaBersubsidi()
 {
     int menu;
     printf("|| ==================================================== ||\n");
-    printf("||                      Menu Jenis                      ||\n");
+    printf("||                   Jenis Pelanggan                    ||\n");
     printf("|| ==================================================== ||\n");
     printf("|| 1. Rumah Tangga A1                                   ||\n");
     printf("|| 2. Rumah Tangga A2                                   ||\n");
@@ -138,16 +153,19 @@ void nonNiagaTanpaBersubsidi()
     case 5:
         rtB();
     default:
-        printf("Maaf, input Anda salah. Silahkan ulangi!\n");
+        printf("|| ================================================== ||\n");
+        printf("||       Maaf Input anda salah, Silahkan ulangi !     ||\n");
+        printf("|| ================================================== ||\n");
         nonNiagaTanpaBersubsidi();
         break;
     }
 }
+
 void niaga()
 {
     int menu;
     printf("|| ==================================================== ||\n");
-    printf("||                      Menu Jenis                      ||\n");
+    printf("||                   Jenis Pelanggan                    ||\n");
     printf("|| ==================================================== ||\n");
     printf("|| 1. Niaga Kecil                                       ||\n");
     printf("|| 2. Niaga Sedang                                      ||\n");
@@ -170,333 +188,1099 @@ void niaga()
         limasSegiempat();
         break;
     default:
-        printf("Maaf, input Anda salah. Silahkan ulangi!\n");
+        printf("|| ================================================== ||\n");
+        printf("||       Maaf Input anda salah, Silahkan ulangi !     ||\n");
+        printf("|| ================================================== ||\n");
         niaga();
         break;
     }
 }
 
-int nnbA1()
-{
-    int menu;
-    int pakaiAir, biaya;
-    printf("|| ==================================================== ||\n");
-    printf("||                     Menu Golongan                    ||\n");
-    printf("|| ==================================================== ||\n");
-    printf("|| 1. D1 - 1                                            ||\n");
-    printf("|| 2. D1 - 2                                            ||\n");
-    printf("|| ==================================================== ||\n");
-    printf("\n");
-    printf("  Pilihan Anda :");
-    scanf("%d", &menu);
-    system("clear");
-    switch (menu)
-    {
-    case 1:
-        totalBiayaD11();
-        break;
-    case 2:
-        totalBiayaD12();
-        break;
-    default:
-        printf("Maaf Input anda salah !");
-        nnbA1();
-    }
-    cobaLagi();
-}
-
-int totalBiayaD11()
+void totalBiayaD11()
 {
     int pakaiAir, biaya;
     pakaiAir = pemakaianAir();
     if (pakaiAir <= 10)
     {
-        biaya = 1780 * pakaiAir;
-        printf("Total biaya air anda adalah : Rp. %d", biaya);
+        biaya = 17800 + ADMIN_RT;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
     }
     else if (pakaiAir > 10 && pakaiAir <= 20)
     {
-        biaya = 17800 + ((pakaiAir - 10) * 2060);
-        printf("Total biaya air anda adalah : Rp. %d", biaya);
+        biaya = pakaiAir * 2060 + ADMIN_RT;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
     }
     else if (pakaiAir > 20)
     {
-        biaya = 38400 + ((pakaiAir - 20) * 5880);
-        printf("Total biaya air anda adalah : Rp. %d", biaya);
+        biaya = pakaiAir * 5880 + ADMIN_RT;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
     }
     else
     {
-        printf("Maaf Input anda salah !");
+        printf("|| ================================================== ||\n");
+        printf("||               Maaf Input anda salah !              ||\n");
+        printf("|| ================================================== ||\n");
         totalBiayaD11();
     }
 }
 
-int totalBiayaD12()
+void totalBiayaD12()
 {
     int pakaiAir, biaya;
     pakaiAir = pemakaianAir();
     if (pakaiAir <= 10)
     {
-        biaya = 2060 * pakaiAir;
-        printf("Total biaya air anda adalah : Rp. %d", biaya);
+        biaya = 20600;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
     }
     else if (pakaiAir > 10 && pakaiAir <= 20)
     {
-        biaya = 20600 + ((pakaiAir - 10) * 2340);
-        printf("Total biaya air anda adalah : Rp. %d", biaya);
+        biaya = pakaiAir * 2340;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
     }
     else if (pakaiAir > 20)
     {
-        biaya = 44000 + ((pakaiAir - 20) * 5940);
-        printf("Total biaya air anda adalah : Rp. %d", biaya);
+        biaya = pakaiAir * 5940;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
     }
     else
     {
-        printf("Maaf Input anda salah !");
+        printf("|| ================================================== ||\n");
+        printf("||               Maaf Input anda salah !              ||\n");
+        printf("|| ================================================== ||\n");
         totalBiayaD12();
     }
 }
 
-int nnbA2()
-{
-    int menu;
-    int pakaiAir, biaya;
-    printf("|| ==================================================== ||\n");
-    printf("||                     Menu Golongan                    ||\n");
-    printf("|| ==================================================== ||\n");
-    printf("|| 1. D2 - 1                                            ||\n");
-    printf("|| 2. D2 - 2                                            ||\n");
-    printf("|| ==================================================== ||\n");
-    printf("\n");
-    printf("  Pilihan Anda :");
-    scanf("%d", &menu);
-    system("clear");
-    switch (menu)
-    {
-    case 1:
-        totalBiayaD21();
-        break;
-    case 2:
-        totalBiayaD22();
-        break;
-    default:
-        printf("Maaf Input anda salah !");
-        nnbA2();
-    }
-    cobaLagi();
-}
-
-int totalBiayaD21()
+void totalBiayaD21()
 {
     int pakaiAir, biaya;
     pakaiAir = pemakaianAir();
     if (pakaiAir <= 10)
     {
-        biaya = 2340 * pakaiAir;
-        printf("Total biaya air anda adalah : Rp. %d", biaya);
+        biaya = 23400;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
     }
     else if (pakaiAir > 10 && pakaiAir <= 20)
     {
-        biaya = 23400 + ((pakaiAir - 10) * 2620);
-        printf("Total biaya air anda adalah : Rp. %d", biaya);
+        biaya = pakaiAir * 2620;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
     }
     else if (pakaiAir > 20)
     {
-        biaya = 49600 + ((pakaiAir - 20) * 6000);
-        printf("Total biaya air anda adalah : Rp. %d", biaya);
+        biaya = pakaiAir * 6000;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
     }
     else
     {
-        printf("Maaf Input anda salah !");
+        printf("|| ================================================== ||\n");
+        printf("||               Maaf Input anda salah !              ||\n");
+        printf("|| ================================================== ||\n");
         totalBiayaD21();
     }
 }
 
-int totalBiayaD22()
+void totalBiayaD22()
 {
     int pakaiAir, biaya;
     pakaiAir = pemakaianAir();
     if (pakaiAir <= 10)
     {
-        biaya = 2620 * pakaiAir;
-        printf("Total biaya air anda adalah : Rp. %d", biaya);
+        biaya = 26200;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
     }
     else if (pakaiAir > 10 && pakaiAir <= 20)
     {
-        biaya = 26200 + ((pakaiAir - 10) * 2900);
-        printf("Total biaya air anda adalah : Rp. %d", biaya);
+        biaya = pakaiAir * 2900;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
     }
     else if (pakaiAir > 20)
     {
-        biaya = 55200 + ((pakaiAir - 20) * 6060);
-        printf("Total biaya air anda adalah : Rp. %d", biaya);
+        biaya = pakaiAir * 6060;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
     }
     else
     {
-        printf("Maaf Input anda salah !");
+        printf("|| ================================================== ||\n");
+        printf("||               Maaf Input anda salah !              ||\n");
+        printf("|| ================================================== ||\n");
         totalBiayaD22();
     }
 }
 
-int nnbA3()
-{
-    int menu;
-    int pakaiAir, biaya;
-    printf("|| ==================================================== ||\n");
-    printf("||                     Menu Golongan                    ||\n");
-    printf("|| ==================================================== ||\n");
-    printf("|| 1. D3 - 1                                            ||\n");
-    printf("|| 2. D3 - 2                                            ||\n");
-    printf("|| ==================================================== ||\n");
-    printf("\n");
-    printf("  Pilihan Anda :");
-    scanf("%d", &menu);
-    system("clear");
-    switch (menu)
-    {
-    case 1:
-        totalBiayaD31();
-        break;
-    case 2:
-        totalBiayaD32();
-        break;
-    default:
-        printf("Maaf Input anda salah !");
-        nnbA2();
-    }
-    cobaLagi();
-}
-
-int totalBiayaD31()
+void totalBiayaD31()
 {
     int pakaiAir, biaya;
     pakaiAir = pemakaianAir();
     if (pakaiAir <= 10)
     {
-        biaya = 2900 * pakaiAir;
-        printf("Total biaya air anda adalah : Rp. %d", biaya);
+        biaya = 29000;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
     }
     else if (pakaiAir > 10 && pakaiAir <= 20)
     {
-        biaya = 29000 + ((pakaiAir - 10) * 3180);
-        printf("Total biaya air anda adalah : Rp. %d", biaya);
+        biaya = pakaiAir * 3180;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
     }
     else if (pakaiAir > 20)
     {
-        biaya = 60800 + ((pakaiAir - 20) * 6120);
-        printf("Total biaya air anda adalah : Rp. %d", biaya);
+        biaya = pakaiAir * 6120;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
     }
     else
     {
-        printf("Maaf Input anda salah !");
+        printf("|| ================================================== ||\n");
+        printf("||               Maaf Input anda salah !              ||\n");
+        printf("|| ================================================== ||\n");
         totalBiayaD31();
     }
 }
 
-int totalBiayaD32()
+void totalBiayaD32()
 {
     int pakaiAir, biaya;
     pakaiAir = pemakaianAir();
     if (pakaiAir <= 10)
     {
-        biaya = 3180 * pakaiAir;
-        printf("Total biaya air anda adalah : Rp. %d", biaya);
+        biaya = 31800;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
     }
     else if (pakaiAir > 10 && pakaiAir <= 20)
     {
-        biaya = 31800 + ((pakaiAir - 10) * 3460);
-        printf("Total biaya air anda adalah : Rp. %d", biaya);
+        biaya = pakaiAir * 3460;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
     }
     else if (pakaiAir > 20)
     {
-        biaya = 66400 + ((pakaiAir - 20) * 6180);
-        printf("Total biaya air anda adalah : Rp. %d", biaya);
+        biaya = pakaiAir * 6180;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
     }
     else
     {
-        printf("Maaf Input anda salah !");
+        printf("|| ================================================== ||\n");
+        printf("||               Maaf Input anda salah !              ||\n");
+        printf("|| ================================================== ||\n");
         totalBiayaD22();
     }
 }
 
-int nnbA4()
-{
-    int menu;
-    int pakaiAir, biaya;
-    printf("|| ==================================================== ||\n");
-    printf("||                     Menu Golongan                    ||\n");
-    printf("|| ==================================================== ||\n");
-    printf("|| 1. D4 - 1                                            ||\n");
-    printf("|| 2. D4 - 2                                            ||\n");
-    printf("|| ==================================================== ||\n");
-    printf("\n");
-    printf("  Pilihan Anda :");
-    scanf("%d", &menu);
-    system("clear");
-    switch (menu)
-    {
-    case 1:
-        totalBiayaD41();
-        break;
-    case 2:
-        totalBiayaD42();
-        break;
-    default:
-        printf("Maaf Input anda salah !");
-        nnbA4();
-    }
-    cobaLagi();
-}
-
-int totalBiayaD41()
+void totalBiayaD41()
 {
     int pakaiAir, biaya;
     pakaiAir = pemakaianAir();
     if (pakaiAir <= 10)
     {
-        biaya = 3460 * pakaiAir;
-        printf("Total biaya air anda adalah : Rp. %d", biaya);
+        biaya = 34600;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
     }
     else if (pakaiAir > 10 && pakaiAir <= 20)
     {
-        biaya = 34600 + ((pakaiAir - 10) * 3740);
-        printf("Total biaya air anda adalah : Rp. %d", biaya);
+        biaya = pakaiAir * 3740;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
     }
     else if (pakaiAir > 20)
     {
-        biaya = 72000 + ((pakaiAir - 20) * 6240);
-        printf("Total biaya air anda adalah : Rp. %d", biaya);
+        biaya = pakaiAir * 6240;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
     }
     else
     {
-        printf("Maaf Input anda salah !");
+        printf("|| ================================================== ||\n");
+        printf("||               Maaf Input anda salah !              ||\n");
+        printf("|| ================================================== ||\n");
         totalBiayaD41();
     }
 }
 
-int totalBiayaD42()
+void totalBiayaD42()
 {
     int pakaiAir, biaya;
     pakaiAir = pemakaianAir();
     if (pakaiAir <= 10)
     {
-        biaya = 3740 * pakaiAir;
-        printf("Total biaya air anda adalah : Rp. %d", biaya);
+        biaya = 37400;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
     }
     else if (pakaiAir > 10 && pakaiAir <= 20)
     {
-        biaya = 37400 + ((pakaiAir - 10) * 4020);
-        printf("Total biaya air anda adalah : Rp. %d", biaya);
+        biaya = pakaiAir * 4020;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
     }
     else if (pakaiAir > 20)
     {
-        biaya = 77600 + ((pakaiAir - 20) * 6300);
-        printf("Total biaya air anda adalah : Rp. %d", biaya);
+        biaya = pakaiAir * 6300;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
     }
     else
     {
-        printf("Maaf Input anda salah !");
+        printf("|| ================================================== ||\n");
+        printf("||               Maaf Input anda salah !              ||\n");
+        printf("|| ================================================== ||\n");
         totalBiayaD42();
+    }
+}
+
+void totalBiayaD13()
+{
+    int pakaiAir, biaya;
+    pakaiAir = pemakaianAir();
+    if (pakaiAir <= 10)
+    {
+        biaya = 63400;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
+    }
+    else if (pakaiAir > 10 && pakaiAir <= 20)
+    {
+        biaya = pakaiAir * 9200;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
+    }
+    else if (pakaiAir > 20)
+    {
+        biaya = pakaiAir * 9600;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
+    }
+    else
+    {
+        printf("|| ================================================== ||\n");
+        printf("||               Maaf Input anda salah !              ||\n");
+        printf("|| ================================================== ||\n");
+        totalBiayaD13();
+    }
+}
+
+void totalBiayaD14()
+{
+    int pakaiAir, biaya;
+    pakaiAir = pemakaianAir();
+    if (pakaiAir <= 10)
+    {
+        biaya = 64200;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
+    }
+    else if (pakaiAir > 10 && pakaiAir <= 20)
+    {
+        biaya = pakaiAir * 9350;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
+    }
+    else if (pakaiAir > 20)
+    {
+        biaya = pakaiAir * 9650;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
+    }
+    else
+    {
+        printf("|| ================================================== ||\n");
+        printf("||               Maaf Input anda salah !              ||\n");
+        printf("|| ================================================== ||\n");
+        totalBiayaD14();
+    }
+}
+
+void totalBiayaD23()
+{
+    int pakaiAir, biaya;
+    pakaiAir = pemakaianAir();
+    if (pakaiAir <= 10)
+    {
+        biaya = 64900;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
+    }
+    else if (pakaiAir > 10 && pakaiAir <= 20)
+    {
+        biaya = pakaiAir * 9500;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
+    }
+    else if (pakaiAir > 20)
+    {
+        biaya = pakaiAir * 9800;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
+    }
+    else
+    {
+        printf("|| ================================================== ||\n");
+        printf("||               Maaf Input anda salah !              ||\n");
+        printf("|| ================================================== ||\n");
+        totalBiayaD23();
+    }
+}
+
+void totalBiayaD24()
+{
+    int pakaiAir, biaya;
+    pakaiAir = pemakaianAir();
+    if (pakaiAir <= 10)
+    {
+        biaya = 65700;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
+    }
+    else if (pakaiAir > 10 && pakaiAir <= 20)
+    {
+        biaya = pakaiAir * 9650;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
+    }
+    else if (pakaiAir > 20)
+    {
+        biaya = pakaiAir * 9950;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
+    }
+    else
+    {
+        printf("|| ================================================== ||\n");
+        printf("||               Maaf Input anda salah !              ||\n");
+        printf("|| ================================================== ||\n");
+        totalBiayaD24();
+    }
+}
+
+void totalBiayaD33()
+{
+    int pakaiAir, biaya;
+    pakaiAir = pemakaianAir();
+    if (pakaiAir <= 10)
+    {
+        biaya = 66400;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
+    }
+    else if (pakaiAir > 10 && pakaiAir <= 20)
+    {
+        biaya = pakaiAir * 9800;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
+    }
+    else if (pakaiAir > 20)
+    {
+        biaya = pakaiAir * 10100;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
+    }
+    else
+    {
+        printf("|| ================================================== ||\n");
+        printf("||               Maaf Input anda salah !              ||\n");
+        printf("|| ================================================== ||\n");
+        totalBiayaD33();
+    }
+}
+
+void totalBiayaD34()
+{
+    int pakaiAir, biaya;
+    pakaiAir = pemakaianAir();
+    if (pakaiAir <= 10)
+    {
+        biaya = 67200;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
+    }
+    else if (pakaiAir > 10 && pakaiAir <= 20)
+    {
+        biaya = pakaiAir * 9950;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
+    }
+    else if (pakaiAir > 20)
+    {
+        biaya = pakaiAir * 10250;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
+    }
+    else
+    {
+        printf("|| ================================================== ||\n");
+        printf("||               Maaf Input anda salah !              ||\n");
+        printf("|| ================================================== ||\n");
+        totalBiayaD34();
+    }
+}
+
+void totalBiayaD43()
+{
+    int pakaiAir, biaya;
+    pakaiAir = pemakaianAir();
+    if (pakaiAir <= 10)
+    {
+        biaya = 67900;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
+    }
+    else if (pakaiAir > 10 && pakaiAir <= 20)
+    {
+        biaya = pakaiAir * 10100;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
+    }
+    else if (pakaiAir > 20)
+    {
+        biaya = pakaiAir * 10400;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
+    }
+    else
+    {
+        printf("|| ================================================== ||\n");
+        printf("||               Maaf Input anda salah !              ||\n");
+        printf("|| ================================================== ||\n");
+        totalBiayaD43();
+    }
+}
+
+void totalBiayaD44()
+{
+    int pakaiAir, biaya;
+    pakaiAir = pemakaianAir();
+    if (pakaiAir <= 10)
+    {
+        biaya = 68700;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
+    }
+    else if (pakaiAir > 10 && pakaiAir <= 20)
+    {
+        biaya = pakaiAir * 10250;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
+    }
+    else if (pakaiAir > 20)
+    {
+        biaya = pakaiAir * 10550;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
+    }
+    else
+    {
+        printf("|| ================================================== ||\n");
+        printf("||               Maaf Input anda salah !              ||\n");
+        printf("|| ================================================== ||\n");
+        totalBiayaD44();
+    }
+}
+
+void totalBiayaD51()
+{
+    int pakaiAir, biaya;
+    pakaiAir = pemakaianAir();
+    if (pakaiAir <= 10)
+    {
+        biaya = 69400;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
+    }
+    else if (pakaiAir > 10 && pakaiAir <= 20)
+    {
+        biaya = pakaiAir * 10400;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
+    }
+    else if (pakaiAir > 20)
+    {
+        biaya = pakaiAir * 10700;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
+    }
+    else
+    {
+        printf("|| ================================================== ||\n");
+        printf("||               Maaf Input anda salah !              ||\n");
+        printf("|| ================================================== ||\n");
+        totalBiayaD51();
+    }
+}
+
+void totalBiayaD52()
+{
+    int pakaiAir, biaya;
+    pakaiAir = pemakaianAir();
+    if (pakaiAir <= 10)
+    {
+        biaya = 70200;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
+    }
+    else if (pakaiAir > 10 && pakaiAir <= 20)
+    {
+        biaya = pakaiAir * 10550;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
+    }
+    else if (pakaiAir > 20)
+    {
+        biaya = pakaiAir * 10850;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
+    }
+    else
+    {
+        printf("|| ================================================== ||\n");
+        printf("||               Maaf Input anda salah !              ||\n");
+        printf("|| ================================================== ||\n");
+        totalBiayaD52();
+    }
+}
+
+void totalBiayaD53()
+{
+    int pakaiAir, biaya;
+    pakaiAir = pemakaianAir();
+    if (pakaiAir <= 10)
+    {
+        biaya = 70900;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
+    }
+    else if (pakaiAir > 10 && pakaiAir <= 20)
+    {
+        biaya = pakaiAir * 10700;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
+    }
+    else if (pakaiAir > 20)
+    {
+        biaya = pakaiAir * 11000;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
+    }
+    else
+    {
+        printf("|| ================================================== ||\n");
+        printf("||               Maaf Input anda salah !              ||\n");
+        printf("|| ================================================== ||\n");
+        totalBiayaD53();
+    }
+}
+
+void totalBiayaD54()
+{
+    int pakaiAir, biaya;
+    pakaiAir = pemakaianAir();
+    if (pakaiAir <= 10)
+    {
+        biaya = 71700;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
+    }
+    else if (pakaiAir > 10 && pakaiAir <= 20)
+    {
+        biaya = pakaiAir * 10850;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
+    }
+    else if (pakaiAir > 20)
+    {
+        biaya = pakaiAir * 11150;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
+    }
+    else
+    {
+        printf("|| ================================================== ||\n");
+        printf("||               Maaf Input anda salah !              ||\n");
+        printf("|| ================================================== ||\n");
+        totalBiayaD54();
+    }
+}
+
+void totalBiayaE11()
+{
+    int pakaiAir, biaya;
+    pakaiAir = pemakaianAir();
+    if (pakaiAir <= 10)
+    {
+        biaya = 92000;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
+    }
+    else if (pakaiAir > 10 && pakaiAir <= 20)
+    {
+        biaya = pakaiAir * 9850;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
+    }
+    else if (pakaiAir > 20)
+    {
+        biaya = pakaiAir * 10950;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
+    }
+    else
+    {
+        printf("|| ================================================== ||\n");
+        printf("||               Maaf Input anda salah !              ||\n");
+        printf("|| ================================================== ||\n");
+        totalBiayaE11();
+    }
+}
+
+void totalBiayaE12()
+{
+    int pakaiAir, biaya;
+    pakaiAir = pemakaianAir();
+    if (pakaiAir <= 10)
+    {
+        biaya = 95000;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
+    }
+    else if (pakaiAir > 10 && pakaiAir <= 20)
+    {
+        biaya = pakaiAir * 10150;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
+    }
+    else if (pakaiAir > 20)
+    {
+        biaya = pakaiAir * 11250;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
+    }
+    else
+    {
+        printf("|| ================================================== ||\n");
+        printf("||               Maaf Input anda salah !              ||\n");
+        printf("|| ================================================== ||\n");
+        totalBiayaE12();
+    }
+}
+
+void totalBiayaE13()
+{
+    int pakaiAir, biaya;
+    pakaiAir = pemakaianAir();
+    if (pakaiAir <= 10)
+    {
+        biaya = 98000;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
+    }
+    else if (pakaiAir > 10 && pakaiAir <= 20)
+    {
+        biaya = pakaiAir * 10450;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
+    }
+    else if (pakaiAir > 20)
+    {
+        biaya = pakaiAir * 11550;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
+    }
+    else
+    {
+        printf("|| ================================================== ||\n");
+        printf("||               Maaf Input anda salah !              ||\n");
+        printf("|| ================================================== ||\n");
+        totalBiayaE13();
+    }
+}
+
+void totalBiayaE14()
+{
+    int pakaiAir, biaya;
+    pakaiAir = pemakaianAir();
+    if (pakaiAir <= 10)
+    {
+        biaya = 101000;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
+    }
+    else if (pakaiAir > 10 && pakaiAir <= 20)
+    {
+        biaya = pakaiAir * 10750;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
+    }
+    else if (pakaiAir > 20)
+    {
+        biaya = pakaiAir * 11850;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
+    }
+    else
+    {
+        printf("|| ================================================== ||\n");
+        printf("||               Maaf Input anda salah !              ||\n");
+        printf("|| ================================================== ||\n");
+        totalBiayaE14();
+    }
+}
+
+void totalBiayaE21()
+{
+    int pakaiAir, biaya;
+    pakaiAir = pemakaianAir();
+    if (pakaiAir <= 10)
+    {
+        biaya = 104000;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
+    }
+    else if (pakaiAir > 10 && pakaiAir <= 20)
+    {
+        biaya = pakaiAir * 11050;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
+    }
+    else if (pakaiAir > 20)
+    {
+        biaya = pakaiAir * 12150;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
+    }
+    else
+    {
+        printf("|| ================================================== ||\n");
+        printf("||               Maaf Input anda salah !              ||\n");
+        printf("|| ================================================== ||\n");
+        totalBiayaE21();
+    }
+}
+
+void totalBiayaE22()
+{
+    int pakaiAir, biaya;
+    pakaiAir = pemakaianAir();
+    if (pakaiAir <= 10)
+    {
+        biaya = 107000;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
+    }
+    else if (pakaiAir > 10 && pakaiAir <= 20)
+    {
+        biaya = pakaiAir * 11350;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
+    }
+    else if (pakaiAir > 20)
+    {
+        biaya = pakaiAir * 12550;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
+    }
+    else
+    {
+        printf("|| ================================================== ||\n");
+        printf("||               Maaf Input anda salah !              ||\n");
+        printf("|| ================================================== ||\n");
+        totalBiayaE22();
+    }
+}
+
+void totalBiayaE23()
+{
+    int pakaiAir, biaya;
+    pakaiAir = pemakaianAir();
+    if (pakaiAir <= 10)
+    {
+        biaya = 110000;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
+    }
+    else if (pakaiAir > 10 && pakaiAir <= 20)
+    {
+        biaya = pakaiAir * 11650;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
+    }
+    else if (pakaiAir > 20)
+    {
+        biaya = pakaiAir * 13150;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
+    }
+    else
+    {
+        printf("|| ================================================== ||\n");
+        printf("||               Maaf Input anda salah !              ||\n");
+        printf("|| ================================================== ||\n");
+        totalBiayaE23();
+    }
+}
+
+void totalBiayaE24()
+{
+    int pakaiAir, biaya;
+    pakaiAir = pemakaianAir();
+    if (pakaiAir <= 10)
+    {
+        biaya = 113000;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
+    }
+    else if (pakaiAir > 10 && pakaiAir <= 20)
+    {
+        biaya = pakaiAir * 11950;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
+    }
+    else if (pakaiAir > 20)
+    {
+        biaya = pakaiAir * 13950;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
+    }
+    else
+    {
+        printf("|| ================================================== ||\n");
+        printf("||               Maaf Input anda salah !              ||\n");
+        printf("|| ================================================== ||\n");
+        totalBiayaE24();
+    }
+}
+
+void totalBiayaE31()
+{
+    int pakaiAir, biaya;
+    pakaiAir = pemakaianAir();
+    if (pakaiAir <= 10)
+    {
+        biaya = 116000;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
+    }
+    else if (pakaiAir > 10 && pakaiAir <= 20)
+    {
+        biaya = pakaiAir * 12250;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
+    }
+    else if (pakaiAir > 20)
+    {
+        biaya = pakaiAir * 14750;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
+    }
+    else
+    {
+        printf("|| ================================================== ||\n");
+        printf("||               Maaf Input anda salah !              ||\n");
+        printf("|| ================================================== ||\n");
+        totalBiayaE31();
+    }
+}
+
+void totalBiayaE32()
+{
+    int pakaiAir, biaya;
+    pakaiAir = pemakaianAir();
+    if (pakaiAir <= 10)
+    {
+        biaya = 119000;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
+    }
+    else if (pakaiAir > 10 && pakaiAir <= 20)
+    {
+        biaya = pakaiAir * 12550;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
+    }
+    else if (pakaiAir > 20)
+    {
+        biaya = pakaiAir * 15050;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
+    }
+    else
+    {
+        printf("|| ================================================== ||\n");
+        printf("||               Maaf Input anda salah !              ||\n");
+        printf("|| ================================================== ||\n");
+        totalBiayaE32();
+    }
+}
+
+void totalBiayaE33()
+{
+    int pakaiAir, biaya;
+    pakaiAir = pemakaianAir();
+    if (pakaiAir <= 10)
+    {
+        biaya = 122000;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
+    }
+    else if (pakaiAir > 10 && pakaiAir <= 20)
+    {
+        biaya = pakaiAir * 12850;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
+    }
+    else if (pakaiAir > 20)
+    {
+        biaya = pakaiAir * 15850;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
+    }
+    else
+    {
+        printf("|| ================================================== ||\n");
+        printf("||               Maaf Input anda salah !              ||\n");
+        printf("|| ================================================== ||\n");
+        totalBiayaE33();
+    }
+}
+
+void totalBiayaE34()
+{
+    int pakaiAir, biaya;
+    pakaiAir = pemakaianAir();
+    if (pakaiAir <= 10)
+    {
+        biaya = 125000;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
+    }
+    else if (pakaiAir > 10 && pakaiAir <= 20)
+    {
+        biaya = pakaiAir * 13150;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
+    }
+    else if (pakaiAir > 20)
+    {
+        biaya = pakaiAir * 16650;
+        printf("|| ================================================== ||\n");
+        printf("|| Total biaya air anda adalah : Rp. %d               ||\n", biaya);
+        printf("|| ================================================== ||\n");
+    }
+    else
+    {
+        printf("|| ================================================== ||\n");
+        printf("||               Maaf Input anda salah !              ||\n");
+        printf("|| ================================================== ||\n");
+        totalBiayaE34();
     }
 }
 
@@ -515,9 +1299,9 @@ int pemakaianAir()
     return pakaiAir;
 }
 
-int cobaLagi()
+void cobaLagi()
 {
-    int pilihanUtama;
+    int pilih;
     printf("||================================================||\n");
     printf("|| Apakah Anda ingin menjalankan program kembali? ||\n");
     printf("||================================================||\n");
@@ -525,8 +1309,8 @@ int cobaLagi()
     printf("|| 2. Tidak                                       ||\n");
     printf("||================================================||\n");
     printf("\nPilihan Anda: ");
-    scanf("%d", &pilihanUtama);
-    switch (pilihanUtama)
+    scanf("%d", &pilih);
+    switch (pilih)
     {
     case 1:
         system("clear");
@@ -535,7 +1319,9 @@ int cobaLagi()
         system("clear");
         break;
     default:
-        printf("\nMaaf, input Anda salah. Silahkan ulangi!\n");
+        printf("|| ================================================== ||\n");
+        printf("||       Maaf Input anda salah, Silahkan ulangi !     ||\n");
+        printf("|| ================================================== ||\n");
         cobaLagi();
     }
 }
