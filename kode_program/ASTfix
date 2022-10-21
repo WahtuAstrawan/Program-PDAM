@@ -8,6 +8,7 @@
 #define BPM_U 7500     // biaya pemeliharaan usaha
 #define JATUH_TEMPO 20 // jatuh tempo tgl 20
 
+// deklarasi semua fungsi
 void namaProgram(), namaKelompok(), menuUtama(), menuRT(), totalBiayaD11(), is(), cobaLagi(),
     Input(), Input_Float(), Input_Int(), range_Validasi_Int(), totalBiayaD12(),
     totalBiayaE34(), totalBiayaE33(), totalBiayaE32(), totalBiayaE31(), totalBiayaE24(),
@@ -16,7 +17,7 @@ void namaProgram(), namaKelompok(), menuUtama(), menuRT(), totalBiayaD11(), is()
     totalBiayaD51(), totalBiayaD44(), totalBiayaD43(), totalBiayaD34(), totalBiayaD33(),
     totalBiayaD24(), totalBiayaD23(), totalBiayaD14(), totalBiayaD13(), totalBiayaD42(),
     totalBiayaD41(), totalBiayaD32(), totalBiayaD31(), totalBiayaD22(), totalBiayaD21(),
-    akhirProgram();
+    akhirProgram(), menuUsaha();
 
 int validasi_Int(), pilihListrik();
 
