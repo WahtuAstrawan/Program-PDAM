@@ -1,0 +1,358 @@
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+#define ADMIN_RT 10000 // biaya admin rumah tangga
+#define ADMIN_N 12500  // biaya admin usaha
+#define DENDA 25000    // denda bila lewat jatuh tempo
+#define BPM_RT 5000    // biaya pemeliharaan rumah tangga
+#define BPM_U 7500     // biaya pemeliharaan usaha
+#define JATUH_TEMPO 20 // jatuh tempo tgl 20
+
+void namaProgram(), namaKelompok(), menuUtama(), menuRT(),
+    totalBiayaD11(), is(), cobaLagi(),
+    Input(), Input_Float(), Input_Int(), range_Validasi_Int();
+
+int validasi_Int(), pilihListrik();
+
+float validasi_Float(), pemakaianAir();
+
+// validasi float
+void Input(float *var, char *nama)
+{
+    while (1)
+    {
+        Input_Float(var, nama);
+        fflush(stdin);
+        if (*var >= 0)
+            break;
+        printf("========================================================\n");
+        printf("||               Maaf Input anda salah !              ||\n");
+        printf("||              Masukan Bilangan Positif              ||\n");
+        printf("========================================================\n");
+        // printf("\t\t\t Input salah! Masukan Bilangan Positif\n");
+    }
+}
+void Input_Float(float *var, char *nama)
+{
+    while (1)
+    {
+        printf("%s", nama);
+        fflush(stdin);
+        if (validasi_Float(var))
+            break;
+        printf("\t\t\t Input salah! Silahkan coba lagi.\n");
+    }
+}
+float validasi_Float(float *var)
+{
+    char buff[1024];
+    char cek;
+    fflush(stdin);
+    if (fgets(buff, sizeof(buff), stdin) != NULL)
+    {
+        if (sscanf(buff, "%f %c", var, &cek) == 1)
+        {
+            return 1;
+        }
+    }
+    return 0;
+}
+
+// validasi integer
+int validasi_Int(int *var)
+{
+    char buff[1024];
+    char cek;
+    fflush(stdin);
+    if (fgets(buff, sizeof(buff), stdin) != NULL)
+    {
+        if (sscanf(buff, "%d %c", var, &cek) == 1)
+        {
+            return 1;
+        }
+    }
+    return 0;
+}
+void Input_Int(int *var, char *nama)
+{
+    while (1)
+    {
+        printf("%s", nama);
+        fflush(stdin);
+        if (validasi_Int(var))
+            break;
+        printf("========================================================\n");
+        printf("||               Maaf Input anda salah !              ||\n");
+        printf("||                 Mohon Masukan Angka                ||\n");
+        printf("========================================================\n");
+    }
+}
+void range_Validasi_Int(int *var, int range1, int range2, char *nama)
+{
+    while (1)
+    {
+        Input_Int(var, nama);
+        fflush(stdin);
+        if (*var >= range1 && *var <= range2)
+            break;
+        printf("\t\t\t Input salah! Pilih Nomer Yang tersedia\n");
+    }
+}
+
+// intro
+void namaProgram()
+{
+    system("clear");
+    printf("========================================================\n");
+    printf("||                    Program PDAM                    ||\n");
+    printf("||               PT.Blangkon Sejahtera                ||\n");
+    printf("|| ================================================== ||\n");
+    printf("||       Tekan Enter untuk melanjutkan program!       ||\n");
+    printf("========================================================\n");
+    getchar();
+    namaKelompok();
+}
+
+// nama kelompok
+void namaKelompok()
+{
+    system("clear");
+    printf("========================================================\n");
+    printf("||                  Anggota Kelompok                  ||\n");
+    printf("|| ================================================== ||\n");
+    printf("||                                                    ||\n");
+    printf("|| - 2205551067 I Putu Liangga Ristiana Putra         ||\n");
+    printf("||                                                    ||\n");
+    printf("|| - 2205551071 I Gusti Ngurah Putu Astrawan          ||\n");
+    printf("||                                                    ||\n");
+    printf("========================================================\n\n");
+    printf("Tekan Enter untuk melanjutkan program!");
+    system("clear");
+    getchar();
+    menuUtama();
+}
+
+int main()
+{
+    namaProgram();
+    return 0;
+}
+
+// menu utama
+void menuUtama()
+{
+    int menu;
+    printf("==========================================================\n");
+    printf("||                Menu Kelompok Pelanggan               ||\n");
+    printf("|| ==================================================== ||\n");
+    printf("|| 1. Rumah Tangga                                      ||\n");
+    printf("|| 2. Usaha                                             ||\n");
+    printf("==========================================================\n");
+    printf("\n");
+    range_Validasi_Int(&menu, 1, 2, "   Pilihan Anda: ");
+    system("clear");
+    switch (menu)
+    {
+    case 1:
+        menuRT();
+        break;
+    case 2:
+        // menuUsaha();
+        break;
+    default:
+        is();
+        menuUtama();
+        break;
+    }
+}
+
+// menu rumah tangga
+void menuRT()
+{
+    system("clear");
+    int menu, listrik1, listrik2, listrik3, listrik4, listrik5;
+    printf("========================================================\n");
+    printf("||                    Program PDAM                    ||\n");
+    printf("||               PT.Blangkon Sejahtera                ||\n");
+    printf("|| ================================================== ||\n");
+    printf("||   Ukuran jalan termasuk saluran got dan berm Anda  ||\n");
+    printf("||              serta apabila memiliki kios           ||\n");
+    printf("|| ================================================== ||\n");
+    printf("||                                                    ||\n");
+    printf("|| 1. 0 - 3,99 meter                                  ||\n");
+    printf("|| 2. 4 - 6,99 meter                                  ||\n");
+    printf("|| 3. 7 - 10   meter                                  ||\n");
+    printf("|| 4.  > 10    meter                                  ||\n");
+    printf("|| 5. Memiliki Rumah dengan kios                      ||\n");
+    printf("||                                                    ||\n");
+    printf("========================================================\n");
+    printf("\n");
+    range_Validasi_Int(&menu, 1, 5, "   Pilihan Anda: ");
+    switch (menu)
+    {
+    case 1:
+        listrik1 = pilihListrik();
+        if (listrik1 == 1)
+        {
+            totalBiayaD11();
+        }
+        else
+        {
+            is();
+            menuRT();
+        }
+        break;
+    case 2:
+        // nnbA2();
+        // break;
+    case 3:
+        // nnbA3();
+        // break;
+    case 4:
+        // nnbA4();
+        // break;
+    case 5:
+        // belum jadi
+        // break;
+    default:
+        is();
+        break;
+    }
+}
+
+// menu memilih listrik
+int pilihListrik()
+{
+    system("clear");
+    int listrik;
+    printf("=========================================================\n");
+    printf("||                    Program PDAM                     ||\n");
+    printf("||               PT.Blangkon Sejahtera                 ||\n");
+    printf("|| =================================================== ||\n");
+    printf("||     Masukkan Besar Listrik Yang Anda Gunakan !      ||\n");
+    printf("|| =================================================== ||\n");
+    printf("||                                                     ||\n");
+    printf("|| 1.    450    Watt                                   ||\n");
+    printf("|| 2.    900    Watt                                   ||\n");
+    printf("|| 3.   1300    Watt                                   ||\n");
+    printf("|| 4. > 1300    Watt                                   ||\n");
+    printf("||                                                     ||\n");
+    printf("=========================================================\n");
+    printf("\n");
+    range_Validasi_Int(&listrik, 1, 4, "   Pilihan Anda: ");
+    return listrik;
+}
+
+void totalBiayaD11()
+{
+    float pakaiAir, biaya, total;
+    int tanggal, denda, bpm, admin;
+    char nama[100];
+    system("clear");
+    printf("========================================================\n");
+    printf("||                    Program PDAM                    ||\n");
+    printf("||               PT.Blangkon Sejahtera                ||\n");
+    printf("|| ================================================== ||\n");
+    printf("||                Registrasi Pelanggan                ||\n");
+    printf("|| ================================================== ||\n");
+    printf("   Nama Anda  : ");
+    scanf("%[^\n]", nama);
+    getchar();
+    printf(" ====================  Bulan Ini   ==================== \n");
+    range_Validasi_Int(&tanggal, 1, 31, "   Tanggal    : ");
+    bpm = BPM_RT;
+    admin = ADMIN_RT;
+    if (tanggal > 20)
+    {
+        denda = DENDA;
+    }
+    else
+    {
+        denda = 0;
+    }
+
+    pakaiAir = pemakaianAir();
+    if (pakaiAir <= 10)
+    {
+        biaya = 17800;
+    }
+    else if (pakaiAir > 10 && pakaiAir <= 20)
+    {
+        biaya = pakaiAir * 2060;
+    }
+    else if (pakaiAir > 20)
+    {
+        biaya = pakaiAir * 5880;
+    }
+    total = biaya + bpm + denda + admin;
+
+    printf("=========================================================\n");
+    printf("||                    Program PDAM                     ||\n");
+    printf("||               PT.Blangkon Sejahtera                 ||\n");
+    printf("|| =================================================== ||\n");
+    printf("||  Struk Pembayaran Air %s                            ||\n", nama);
+    printf("|| =================== Bulan Ini ===================== ||\n");
+    printf("||                                                     ||\n");
+    printf("|| Kelompok Pelanggan : Rumah Tangga                   ||\n");
+    printf("|| Golongan           : D1-1                           ||\n");
+    printf("|| Tanggal Bayar      : Tanggal %d                     ||\n", tanggal);
+    printf("|| Jatuh Tempo Bayar  : Tanggal %d                     ||\n", JATUH_TEMPO);
+    printf("|| Pemakaian Air      : %2.f      M^3                  ||\n", pakaiAir);
+    printf("|| Biaya Air          : Rp. %2.f                       ||\n", biaya);
+    printf("|| Denda              : Rp. %d                         ||\n", denda);
+    printf("|| BPM                : Rp. %d                         ||\n", bpm);
+    printf("|| Biaya Administrasi : Rp. %d                         ||\n", admin);
+    printf("||                                                     ||\n");
+    printf("=========================================================\n");
+    printf("|| Total Bayar        : Rp. %2.f                       ||\n", total);
+    printf("=========================================================\n");
+    getchar();
+    cobaLagi();
+}
+
+float pemakaianAir()
+{
+    system("clear");
+    float pakaiAir, bulanIni, bulanLalu;
+    printf("========================================================\n");
+    printf("||                   Pemakaian Air                    ||\n");
+    printf("========================================================\n");
+    Input(&bulanLalu, "   Masukkan pemakaian bulan lalu (M^3) : ");
+    Input(&bulanIni, "   Masukkan pemakaian bulan ini (M^3)  : ");
+    pakaiAir = bulanIni - bulanLalu;
+    return pakaiAir;
+}
+
+// print input salah
+void is()
+{
+    printf("========================================================\n");
+    printf("||       Maaf Input anda salah, Silahkan ulangi !     ||\n");
+    printf("========================================================\n");
+    getchar();
+}
+
+void cobaLagi()
+{
+    system("clear");
+    int pilih;
+    printf("====================================================\n");
+    printf("|| Apakah Anda ingin menjalankan program kembali? ||\n");
+    printf("||================================================||\n");
+    printf("|| 1. Iya                                         ||\n");
+    printf("|| 2. Tidak                                       ||\n");
+    printf("====================================================\n");
+    range_Validasi_Int(&pilih, 1, 2, "\nPilihan Anda: ");
+    switch (pilih)
+    {
+    case 1:
+        system("clear");
+        menuUtama();
+    case 2:
+        system("clear");
+        break;
+    default:
+        is();
+        cobaLagi();
+    }
+}
