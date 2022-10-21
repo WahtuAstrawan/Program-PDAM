@@ -36,7 +36,6 @@ void Input(float *var, char *nama)
         printf("||               Maaf Input anda salah !              ||\n");
         printf("||              Masukan Bilangan Positif              ||\n");
         printf("========================================================\n");
-        // printf("\t\t\t Input salah! Masukan Bilangan Positif\n");
     }
 }
 void Input_Float(float *var, char *nama)
