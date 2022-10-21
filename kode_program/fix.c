@@ -119,6 +119,7 @@ void namaProgram()
     printf("========================================================\n");
     printf("||                    Program PDAM                    ||\n");
     printf("||               PT.Blangkon Sejahtera                ||\n");
+    printf("||          Selamat Menikmati Layanan Kami :)         ||\n");
     printf("|| ================================================== ||\n");
     printf("||       Tekan Enter untuk melanjutkan program!       ||\n");
     printf("========================================================\n");
@@ -144,7 +145,6 @@ void namaKelompok()
     menuUtama();
 }
 
-
 // menu utama
 void menuUtama()
 {
@@ -157,7 +157,7 @@ void menuUtama()
     printf("|| 2. Usaha                                             ||\n");
     printf("==========================================================\n");
     printf("\n");
-    range_Validasi_Int(&menu, 1, 2, "   Pilihan Anda: ");
+    range_Validasi_Int(&menu, 1, 2, "   Pilihan Anda : ");
     switch (menu)
     {
     case 1:
@@ -194,7 +194,7 @@ void menuRT()
     printf("||                                                    ||\n");
     printf("========================================================\n");
     printf("\n");
-    range_Validasi_Int(&menu, 1, 5, "   Pilihan Anda: ");
+    range_Validasi_Int(&menu, 1, 5, "   Pilihan Anda : ");
     switch (menu)
     {
     case 1:
@@ -294,7 +294,7 @@ void menuRT()
         break;
     default:
         is();
-        break;
+        menuRT();
     }
 }
 
@@ -317,7 +317,7 @@ void menuUsaha()
     printf("||                                                    ||\n");
     printf("========================================================\n");
     printf("\n");
-    range_Validasi_Int(&menu, 1, 3, "   Pilihan Anda: ");
+    range_Validasi_Int(&menu, 1, 3, "   Pilihan Anda : ");
     switch (menu)
     {
     case 1:
@@ -379,7 +379,7 @@ void menuUsaha()
         break;
     default:
         is();
-        break;
+        menuUsaha();
     }
 }
 
@@ -402,7 +402,7 @@ int pilihListrik()
     printf("||                                                     ||\n");
     printf("=========================================================\n");
     printf("\n");
-    range_Validasi_Int(&listrik, 1, 4, "   Pilihan Anda: ");
+    range_Validasi_Int(&listrik, 1, 4, "   Pilihan Anda : ");
     return listrik;
 }
 
@@ -449,6 +449,7 @@ void totalBiayaD11()
         biaya = pakaiAir * 5880;
     }
     total = biaya + bpm + denda + admin;
+    system("clear");
 
     printf("=========================================================\n");
     printf("||                    Program PDAM                     ||\n");
@@ -462,13 +463,13 @@ void totalBiayaD11()
     printf("|| Tanggal Bayar      : Tanggal %d                     \n", tanggal);
     printf("|| Jatuh Tempo Bayar  : Tanggal %d                     \n", JATUH_TEMPO);
     printf("|| Pemakaian Air      : %2.f      M^3                  \n", pakaiAir);
-    printf("|| Biaya Air          : Rp. %2.f                       \n", biaya);
-    printf("|| Denda              : Rp. %d                         \n", denda);
-    printf("|| BPM                : Rp. %d                         \n", bpm);
-    printf("|| Biaya Administrasi : Rp. %d                         \n", admin);
+    printf("|| Biaya Air          : Rp. %2.f,-                       \n", biaya);
+    printf("|| Denda              : Rp. %d,-                         \n", denda);
+    printf("|| BPM                : Rp. %d,-                         \n", bpm);
+    printf("|| Biaya Administrasi : Rp. %d,-                         \n", admin);
     printf("||                                                     \n");
     printf("=========================================================\n");
-    printf("|| Total Bayar        : Rp. %2.f                       \n", total);
+    printf("|| Total Bayar        : Rp. %2.f,-                       \n", total);
     printf("=========================================================\n");
     printf("             Tekan Enter Untuk Melanjutkan  !");
     getchar();
@@ -517,6 +518,7 @@ void totalBiayaD12()
     }
 
     total = biaya + bpm + denda + admin;
+    system("clear");
 
     printf("=========================================================\n");
     printf("||                    Program PDAM                     ||\n");
@@ -530,13 +532,13 @@ void totalBiayaD12()
     printf("|| Tanggal Bayar      : Tanggal %d                     \n", tanggal);
     printf("|| Jatuh Tempo Bayar  : Tanggal %d                     \n", JATUH_TEMPO);
     printf("|| Pemakaian Air      : %2.f      M^3                  \n", pakaiAir);
-    printf("|| Biaya Air          : Rp. %2.f                       \n", biaya);
-    printf("|| Denda              : Rp. %d                         \n", denda);
-    printf("|| BPM                : Rp. %d                         \n", bpm);
-    printf("|| Biaya Administrasi : Rp. %d                         \n", admin);
+    printf("|| Biaya Air          : Rp. %2.f,-                       \n", biaya);
+    printf("|| Denda              : Rp. %d,-                         \n", denda);
+    printf("|| BPM                : Rp. %d,-                         \n", bpm);
+    printf("|| Biaya Administrasi : Rp. %d,-                         \n", admin);
     printf("||                                                     \n");
     printf("|| =================================================== ||\n");
-    printf("|| Total Bayar        : Rp. %2.f                       \n", total);
+    printf("|| Total Bayar        : Rp. %2.f,-                       \n", total);
     printf("=========================================================\n");
     printf("             Tekan Enter Untuk Melanjutkan  !");
     getchar();
@@ -584,6 +586,7 @@ void totalBiayaD13()
         biaya = pakaiAir * 9600;
     }
     total = biaya + bpm + denda + admin;
+    system("clear");
 
     printf("=========================================================\n");
     printf("||                    Program PDAM                     ||\n");
@@ -597,13 +600,13 @@ void totalBiayaD13()
     printf("|| Tanggal Bayar      : Tanggal %d                     \n", tanggal);
     printf("|| Jatuh Tempo Bayar  : Tanggal %d                     \n", JATUH_TEMPO);
     printf("|| Pemakaian Air      : %2.f      M^3                  \n", pakaiAir);
-    printf("|| Biaya Air          : Rp. %2.f                       \n", biaya);
-    printf("|| Denda              : Rp. %d                         \n", denda);
-    printf("|| BPM                : Rp. %d                         \n", bpm);
-    printf("|| Biaya Administrasi : Rp. %d                         \n", admin);
+    printf("|| Biaya Air          : Rp. %2.f,-                       \n", biaya);
+    printf("|| Denda              : Rp. %d,-                         \n", denda);
+    printf("|| BPM                : Rp. %d,-                         \n", bpm);
+    printf("|| Biaya Administrasi : Rp. %d,-                         \n", admin);
     printf("||                                                     \n");
     printf("|| =================================================== ||\n");
-    printf("|| Total Bayar        : Rp. %2.f                       \n", total);
+    printf("|| Total Bayar        : Rp. %2.f,-                       \n", total);
     printf("=========================================================\n");
     printf("             Tekan Enter Untuk Melanjutkan  !");
     getchar();
@@ -651,6 +654,7 @@ void totalBiayaD14()
         biaya = pakaiAir * 9650;
     }
     total = biaya + bpm + denda + admin;
+    system("clear");
     printf("=========================================================\n");
     printf("||                    Program PDAM                     ||\n");
     printf("||               PT.Blangkon Sejahtera                 ||\n");
@@ -663,13 +667,13 @@ void totalBiayaD14()
     printf("|| Tanggal Bayar      : Tanggal %d                     \n", tanggal);
     printf("|| Jatuh Tempo Bayar  : Tanggal %d                     \n", JATUH_TEMPO);
     printf("|| Pemakaian Air      : %2.f      M^3                  \n", pakaiAir);
-    printf("|| Biaya Air          : Rp. %2.f                       \n", biaya);
-    printf("|| Denda              : Rp. %d                         \n", denda);
-    printf("|| BPM                : Rp. %d                         \n", bpm);
-    printf("|| Biaya Administrasi : Rp. %d                         \n", admin);
+    printf("|| Biaya Air          : Rp. %2.f,-                       \n", biaya);
+    printf("|| Denda              : Rp. %d,-                         \n", denda);
+    printf("|| BPM                : Rp. %d,-                         \n", bpm);
+    printf("|| Biaya Administrasi : Rp. %d,-                         \n", admin);
     printf("||                                                     \n");
     printf("|| =================================================== ||\n");
-    printf("|| Total Bayar        : Rp. %2.f                       \n", total);
+    printf("|| Total Bayar        : Rp. %2.f,-                       \n", total);
     printf("=========================================================\n");
     printf("             Tekan Enter Untuk Melanjutkan  !");
     getchar();
@@ -717,6 +721,7 @@ void totalBiayaD21()
         biaya = pakaiAir * 6000;
     }
     total = biaya + bpm + denda + admin;
+    system("clear");
 
     printf("=========================================================\n");
     printf("||                    Program PDAM                     ||\n");
@@ -730,13 +735,13 @@ void totalBiayaD21()
     printf("|| Tanggal Bayar      : Tanggal %d                     \n", tanggal);
     printf("|| Jatuh Tempo Bayar  : Tanggal %d                     \n", JATUH_TEMPO);
     printf("|| Pemakaian Air      : %2.f      M^3                  \n", pakaiAir);
-    printf("|| Biaya Air          : Rp. %2.f                       \n", biaya);
-    printf("|| Denda              : Rp. %d                         \n", denda);
-    printf("|| BPM                : Rp. %d                         \n", bpm);
-    printf("|| Biaya Administrasi : Rp. %d                         \n", admin);
+    printf("|| Biaya Air          : Rp. %2.f,-                       \n", biaya);
+    printf("|| Denda              : Rp. %d,-                         \n", denda);
+    printf("|| BPM                : Rp. %d,-                         \n", bpm);
+    printf("|| Biaya Administrasi : Rp. %d,-                         \n", admin);
     printf("||                                                     \n");
     printf("|| =================================================== ||\n");
-    printf("|| Total Bayar        : Rp. %2.f                       \n", total);
+    printf("|| Total Bayar        : Rp. %2.f,-                       \n", total);
     printf("=========================================================\n");
     printf("             Tekan Enter Untuk Melanjutkan  !");
     getchar();
@@ -784,6 +789,7 @@ void totalBiayaD22()
         biaya = pakaiAir * 6060;
     }
     total = biaya + bpm + denda + admin;
+    system("clear");
 
     printf("=========================================================\n");
     printf("||                    Program PDAM                     ||\n");
@@ -797,13 +803,13 @@ void totalBiayaD22()
     printf("|| Tanggal Bayar      : Tanggal %d                     \n", tanggal);
     printf("|| Jatuh Tempo Bayar  : Tanggal %d                     \n", JATUH_TEMPO);
     printf("|| Pemakaian Air      : %2.f      M^3                  \n", pakaiAir);
-    printf("|| Biaya Air          : Rp. %2.f                       \n", biaya);
-    printf("|| Denda              : Rp. %d                         \n", denda);
-    printf("|| BPM                : Rp. %d                         \n", bpm);
-    printf("|| Biaya Administrasi : Rp. %d                         \n", admin);
+    printf("|| Biaya Air          : Rp. %2.f,-                       \n", biaya);
+    printf("|| Denda              : Rp. %d,-                         \n", denda);
+    printf("|| BPM                : Rp. %d,-                         \n", bpm);
+    printf("|| Biaya Administrasi : Rp. %d,-                         \n", admin);
     printf("||                                                     \n");
     printf("|| =================================================== ||\n");
-    printf("|| Total Bayar        : Rp. %2.f                       \n", total);
+    printf("|| Total Bayar        : Rp. %2.f,-                       \n", total);
     printf("=========================================================\n");
     printf("             Tekan Enter Untuk Melanjutkan  !");
     getchar();
@@ -851,6 +857,7 @@ void totalBiayaD23()
         biaya = pakaiAir * 9800;
     }
     total = biaya + bpm + denda + admin;
+    system("clear");
 
     printf("=========================================================\n");
     printf("||                    Program PDAM                     ||\n");
@@ -864,13 +871,13 @@ void totalBiayaD23()
     printf("|| Tanggal Bayar      : Tanggal %d                     \n", tanggal);
     printf("|| Jatuh Tempo Bayar  : Tanggal %d                     \n", JATUH_TEMPO);
     printf("|| Pemakaian Air      : %2.f      M^3                  \n", pakaiAir);
-    printf("|| Biaya Air          : Rp. %2.f                       \n", biaya);
-    printf("|| Denda              : Rp. %d                         \n", denda);
-    printf("|| BPM                : Rp. %d                         \n", bpm);
-    printf("|| Biaya Administrasi : Rp. %d                         \n", admin);
+    printf("|| Biaya Air          : Rp. %2.f,-                       \n", biaya);
+    printf("|| Denda              : Rp. %d,-                         \n", denda);
+    printf("|| BPM                : Rp. %d,-                         \n", bpm);
+    printf("|| Biaya Administrasi : Rp. %d,-                         \n", admin);
     printf("||                                                     \n");
     printf("|| =================================================== ||\n");
-    printf("|| Total Bayar        : Rp. %2.f                       \n", total);
+    printf("|| Total Bayar        : Rp. %2.f,-                       \n", total);
     printf("=========================================================\n");
     printf("             Tekan Enter Untuk Melanjutkan  !");
     getchar();
@@ -918,6 +925,7 @@ void totalBiayaD24()
         biaya = pakaiAir * 9950;
     }
     total = biaya + bpm + denda + admin;
+    system("clear");
 
     printf("=========================================================\n");
     printf("||                    Program PDAM                     ||\n");
@@ -931,13 +939,13 @@ void totalBiayaD24()
     printf("|| Tanggal Bayar      : Tanggal %d                     \n", tanggal);
     printf("|| Jatuh Tempo Bayar  : Tanggal %d                     \n", JATUH_TEMPO);
     printf("|| Pemakaian Air      : %2.f      M^3                  \n", pakaiAir);
-    printf("|| Biaya Air          : Rp. %2.f                       \n", biaya);
-    printf("|| Denda              : Rp. %d                         \n", denda);
-    printf("|| BPM                : Rp. %d                         \n", bpm);
-    printf("|| Biaya Administrasi : Rp. %d                         \n", admin);
+    printf("|| Biaya Air          : Rp. %2.f,-                       \n", biaya);
+    printf("|| Denda              : Rp. %d,-                         \n", denda);
+    printf("|| BPM                : Rp. %d,-                         \n", bpm);
+    printf("|| Biaya Administrasi : Rp. %d,-                         \n", admin);
     printf("||                                                     \n");
     printf("|| =================================================== ||\n");
-    printf("|| Total Bayar        : Rp. %2.f                       \n", total);
+    printf("|| Total Bayar        : Rp. %2.f,-                       \n", total);
     printf("=========================================================\n");
     printf("             Tekan Enter Untuk Melanjutkan  !");
     getchar();
@@ -985,6 +993,7 @@ void totalBiayaD31()
         biaya = pakaiAir * 6120;
     }
     total = biaya + bpm + denda + admin;
+    system("clear");
 
     printf("=========================================================\n");
     printf("||                    Program PDAM                     ||\n");
@@ -998,13 +1007,13 @@ void totalBiayaD31()
     printf("|| Tanggal Bayar      : Tanggal %d                     \n", tanggal);
     printf("|| Jatuh Tempo Bayar  : Tanggal %d                     \n", JATUH_TEMPO);
     printf("|| Pemakaian Air      : %2.f      M^3                  \n", pakaiAir);
-    printf("|| Biaya Air          : Rp. %2.f                       \n", biaya);
-    printf("|| Denda              : Rp. %d                         \n", denda);
-    printf("|| BPM                : Rp. %d                         \n", bpm);
-    printf("|| Biaya Administrasi : Rp. %d                         \n", admin);
+    printf("|| Biaya Air          : Rp. %2.f,-                       \n", biaya);
+    printf("|| Denda              : Rp. %d,-                         \n", denda);
+    printf("|| BPM                : Rp. %d,-                         \n", bpm);
+    printf("|| Biaya Administrasi : Rp. %d,-                         \n", admin);
     printf("||                                                     \n");
     printf("|| =================================================== ||\n");
-    printf("|| Total Bayar        : Rp. %2.f                       \n", total);
+    printf("|| Total Bayar        : Rp. %2.f,-                       \n", total);
     printf("=========================================================\n");
     printf("             Tekan Enter Untuk Melanjutkan  !");
     getchar();
@@ -1052,6 +1061,7 @@ void totalBiayaD32()
         biaya = pakaiAir * 6180;
     }
     total = biaya + bpm + denda + admin;
+    system("clear");
 
     printf("=========================================================\n");
     printf("||                    Program PDAM                     ||\n");
@@ -1065,13 +1075,13 @@ void totalBiayaD32()
     printf("|| Tanggal Bayar      : Tanggal %d                     \n", tanggal);
     printf("|| Jatuh Tempo Bayar  : Tanggal %d                     \n", JATUH_TEMPO);
     printf("|| Pemakaian Air      : %2.f      M^3                  \n", pakaiAir);
-    printf("|| Biaya Air          : Rp. %2.f                       \n", biaya);
-    printf("|| Denda              : Rp. %d                         \n", denda);
-    printf("|| BPM                : Rp. %d                         \n", bpm);
-    printf("|| Biaya Administrasi : Rp. %d                         \n", admin);
+    printf("|| Biaya Air          : Rp. %2.f,-                       \n", biaya);
+    printf("|| Denda              : Rp. %d,-                         \n", denda);
+    printf("|| BPM                : Rp. %d,-                         \n", bpm);
+    printf("|| Biaya Administrasi : Rp. %d,-                         \n", admin);
     printf("||                                                     \n");
     printf("|| =================================================== ||\n");
-    printf("|| Total Bayar        : Rp. %2.f                       \n", total);
+    printf("|| Total Bayar        : Rp. %2.f,-                       \n", total);
     printf("=========================================================\n");
     printf("             Tekan Enter Untuk Melanjutkan  !");
     getchar();
@@ -1119,6 +1129,7 @@ void totalBiayaD33()
         biaya = pakaiAir * 10100;
     }
     total = biaya + bpm + denda + admin;
+    system("clear");
 
     printf("=========================================================\n");
     printf("||                    Program PDAM                     ||\n");
@@ -1132,13 +1143,13 @@ void totalBiayaD33()
     printf("|| Tanggal Bayar      : Tanggal %d                     \n", tanggal);
     printf("|| Jatuh Tempo Bayar  : Tanggal %d                     \n", JATUH_TEMPO);
     printf("|| Pemakaian Air      : %2.f      M^3                  \n", pakaiAir);
-    printf("|| Biaya Air          : Rp. %2.f                       \n", biaya);
-    printf("|| Denda              : Rp. %d                         \n", denda);
-    printf("|| BPM                : Rp. %d                         \n", bpm);
-    printf("|| Biaya Administrasi : Rp. %d                         \n", admin);
+    printf("|| Biaya Air          : Rp. %2.f,-                       \n", biaya);
+    printf("|| Denda              : Rp. %d,-                         \n", denda);
+    printf("|| BPM                : Rp. %d,-                         \n", bpm);
+    printf("|| Biaya Administrasi : Rp. %d,-                         \n", admin);
     printf("||                                                     \n");
     printf("|| =================================================== ||\n");
-    printf("|| Total Bayar        : Rp. %2.f                       \n", total);
+    printf("|| Total Bayar        : Rp. %2.f,-                       \n", total);
     printf("=========================================================\n");
     printf("             Tekan Enter Untuk Melanjutkan  !");
     getchar();
@@ -1186,6 +1197,7 @@ void totalBiayaD34()
         biaya = pakaiAir * 10250;
     }
     total = biaya + bpm + denda + admin;
+    system("clear");
 
     printf("=========================================================\n");
     printf("||                    Program PDAM                     ||\n");
@@ -1199,13 +1211,13 @@ void totalBiayaD34()
     printf("|| Tanggal Bayar      : Tanggal %d                     \n", tanggal);
     printf("|| Jatuh Tempo Bayar  : Tanggal %d                     \n", JATUH_TEMPO);
     printf("|| Pemakaian Air      : %2.f      M^3                  \n", pakaiAir);
-    printf("|| Biaya Air          : Rp. %2.f                       \n", biaya);
-    printf("|| Denda              : Rp. %d                         \n", denda);
-    printf("|| BPM                : Rp. %d                         \n", bpm);
-    printf("|| Biaya Administrasi : Rp. %d                         \n", admin);
+    printf("|| Biaya Air          : Rp. %2.f,-                       \n", biaya);
+    printf("|| Denda              : Rp. %d,-                         \n", denda);
+    printf("|| BPM                : Rp. %d,-                         \n", bpm);
+    printf("|| Biaya Administrasi : Rp. %d,-                         \n", admin);
     printf("||                                                     \n");
     printf("|| =================================================== ||\n");
-    printf("|| Total Bayar        : Rp. %2.f                       \n", total);
+    printf("|| Total Bayar        : Rp. %2.f,-                       \n", total);
     printf("=========================================================\n");
     printf("             Tekan Enter Untuk Melanjutkan  !");
     getchar();
@@ -1253,6 +1265,7 @@ void totalBiayaD41()
         biaya = pakaiAir * 6240;
     }
     total = biaya + bpm + denda + admin;
+    system("clear");
 
     printf("=========================================================\n");
     printf("||                    Program PDAM                     ||\n");
@@ -1266,13 +1279,13 @@ void totalBiayaD41()
     printf("|| Tanggal Bayar      : Tanggal %d                     \n", tanggal);
     printf("|| Jatuh Tempo Bayar  : Tanggal %d                     \n", JATUH_TEMPO);
     printf("|| Pemakaian Air      : %2.f      M^3                  \n", pakaiAir);
-    printf("|| Biaya Air          : Rp. %2.f                       \n", biaya);
-    printf("|| Denda              : Rp. %d                         \n", denda);
-    printf("|| BPM                : Rp. %d                         \n", bpm);
-    printf("|| Biaya Administrasi : Rp. %d                         \n", admin);
+    printf("|| Biaya Air          : Rp. %2.f,-                       \n", biaya);
+    printf("|| Denda              : Rp. %d,-                         \n", denda);
+    printf("|| BPM                : Rp. %d,-                         \n", bpm);
+    printf("|| Biaya Administrasi : Rp. %d,-                         \n", admin);
     printf("||                                                     \n");
     printf("|| =================================================== ||\n");
-    printf("|| Total Bayar        : Rp. %2.f                       \n", total);
+    printf("|| Total Bayar        : Rp. %2.f,-                       \n", total);
     printf("=========================================================\n");
     printf("             Tekan Enter Untuk Melanjutkan  !");
     getchar();
@@ -1320,6 +1333,7 @@ void totalBiayaD42()
         biaya = pakaiAir * 6300;
     }
     total = biaya + bpm + denda + admin;
+    system("clear");
 
     printf("=========================================================\n");
     printf("||                    Program PDAM                     ||\n");
@@ -1333,13 +1347,13 @@ void totalBiayaD42()
     printf("|| Tanggal Bayar      : Tanggal %d                     \n", tanggal);
     printf("|| Jatuh Tempo Bayar  : Tanggal %d                     \n", JATUH_TEMPO);
     printf("|| Pemakaian Air      : %2.f      M^3                  \n", pakaiAir);
-    printf("|| Biaya Air          : Rp. %2.f                       \n", biaya);
-    printf("|| Denda              : Rp. %d                         \n", denda);
-    printf("|| BPM                : Rp. %d                         \n", bpm);
-    printf("|| Biaya Administrasi : Rp. %d                         \n", admin);
+    printf("|| Biaya Air          : Rp. %2.f,-                       \n", biaya);
+    printf("|| Denda              : Rp. %d,-                         \n", denda);
+    printf("|| BPM                : Rp. %d,-                         \n", bpm);
+    printf("|| Biaya Administrasi : Rp. %d,-                         \n", admin);
     printf("||                                                     \n");
     printf("|| =================================================== ||\n");
-    printf("|| Total Bayar        : Rp. %2.f                       \n", total);
+    printf("|| Total Bayar        : Rp. %2.f,-                       \n", total);
     printf("=========================================================\n");
     printf("             Tekan Enter Untuk Melanjutkan  !");
     getchar();
@@ -1387,6 +1401,7 @@ void totalBiayaD43()
         biaya = pakaiAir * 10400;
     }
     total = biaya + bpm + denda + admin;
+    system("clear");
 
     printf("=========================================================\n");
     printf("||                    Program PDAM                     ||\n");
@@ -1400,13 +1415,13 @@ void totalBiayaD43()
     printf("|| Tanggal Bayar      : Tanggal %d                     \n", tanggal);
     printf("|| Jatuh Tempo Bayar  : Tanggal %d                     \n", JATUH_TEMPO);
     printf("|| Pemakaian Air      : %2.f      M^3                  \n", pakaiAir);
-    printf("|| Biaya Air          : Rp. %2.f                       \n", biaya);
-    printf("|| Denda              : Rp. %d                         \n", denda);
-    printf("|| BPM                : Rp. %d                         \n", bpm);
-    printf("|| Biaya Administrasi : Rp. %d                         \n", admin);
+    printf("|| Biaya Air          : Rp. %2.f,-                       \n", biaya);
+    printf("|| Denda              : Rp. %d,-                         \n", denda);
+    printf("|| BPM                : Rp. %d,-                         \n", bpm);
+    printf("|| Biaya Administrasi : Rp. %d,-                         \n", admin);
     printf("||                                                     \n");
     printf("|| =================================================== ||\n");
-    printf("|| Total Bayar        : Rp. %2.f                       \n", total);
+    printf("|| Total Bayar        : Rp. %2.f,-                       \n", total);
     printf("=========================================================\n");
     printf("             Tekan Enter Untuk Melanjutkan  !");
     getchar();
@@ -1454,6 +1469,7 @@ void totalBiayaD44()
         biaya = pakaiAir * 10550;
     }
     total = biaya + bpm + denda + admin;
+    system("clear");
 
     printf("=========================================================\n");
     printf("||                    Program PDAM                     ||\n");
@@ -1467,13 +1483,13 @@ void totalBiayaD44()
     printf("|| Tanggal Bayar      : Tanggal %d                     \n", tanggal);
     printf("|| Jatuh Tempo Bayar  : Tanggal %d                     \n", JATUH_TEMPO);
     printf("|| Pemakaian Air      : %2.f      M^3                  \n", pakaiAir);
-    printf("|| Biaya Air          : Rp. %2.f                       \n", biaya);
-    printf("|| Denda              : Rp. %d                         \n", denda);
-    printf("|| BPM                : Rp. %d                         \n", bpm);
-    printf("|| Biaya Administrasi : Rp. %d                         \n", admin);
+    printf("|| Biaya Air          : Rp. %2.f,-                       \n", biaya);
+    printf("|| Denda              : Rp. %d,-                         \n", denda);
+    printf("|| BPM                : Rp. %d,-                         \n", bpm);
+    printf("|| Biaya Administrasi : Rp. %d,-                         \n", admin);
     printf("||                                                     \n");
     printf("|| =================================================== ||\n");
-    printf("|| Total Bayar        : Rp. %2.f                       \n", total);
+    printf("|| Total Bayar        : Rp. %2.f,-                       \n", total);
     printf("=========================================================\n");
     printf("             Tekan Enter Untuk Melanjutkan  !");
     getchar();
@@ -1521,6 +1537,7 @@ void totalBiayaD51()
         biaya = pakaiAir * 10700;
     }
     total = biaya + bpm + denda + admin;
+    system("clear");
 
     printf("=========================================================\n");
     printf("||                    Program PDAM                     ||\n");
@@ -1534,13 +1551,13 @@ void totalBiayaD51()
     printf("|| Tanggal Bayar      : Tanggal %d                     \n", tanggal);
     printf("|| Jatuh Tempo Bayar  : Tanggal %d                     \n", JATUH_TEMPO);
     printf("|| Pemakaian Air      : %2.f      M^3                  \n", pakaiAir);
-    printf("|| Biaya Air          : Rp. %2.f                       \n", biaya);
-    printf("|| Denda              : Rp. %d                         \n", denda);
-    printf("|| BPM                : Rp. %d                         \n", bpm);
-    printf("|| Biaya Administrasi : Rp. %d                         \n", admin);
+    printf("|| Biaya Air          : Rp. %2.f,-                       \n", biaya);
+    printf("|| Denda              : Rp. %d,-                         \n", denda);
+    printf("|| BPM                : Rp. %d,-                         \n", bpm);
+    printf("|| Biaya Administrasi : Rp. %d,-                         \n", admin);
     printf("||                                                     \n");
     printf("|| =================================================== ||\n");
-    printf("|| Total Bayar        : Rp. %2.f                       \n", total);
+    printf("|| Total Bayar        : Rp. %2.f,-                       \n", total);
     printf("=========================================================\n");
     printf("             Tekan Enter Untuk Melanjutkan  !");
     getchar();
@@ -1588,6 +1605,7 @@ void totalBiayaD52()
         biaya = pakaiAir * 10850;
     }
     total = biaya + bpm + denda + admin;
+    system("clear");
 
     printf("=========================================================\n");
     printf("||                    Program PDAM                     ||\n");
@@ -1601,13 +1619,13 @@ void totalBiayaD52()
     printf("|| Tanggal Bayar      : Tanggal %d                     \n", tanggal);
     printf("|| Jatuh Tempo Bayar  : Tanggal %d                     \n", JATUH_TEMPO);
     printf("|| Pemakaian Air      : %2.f      M^3                  \n", pakaiAir);
-    printf("|| Biaya Air          : Rp. %2.f                       \n", biaya);
-    printf("|| Denda              : Rp. %d                         \n", denda);
-    printf("|| BPM                : Rp. %d                         \n", bpm);
-    printf("|| Biaya Administrasi : Rp. %d                         \n", admin);
+    printf("|| Biaya Air          : Rp. %2.f,-                       \n", biaya);
+    printf("|| Denda              : Rp. %d,-                         \n", denda);
+    printf("|| BPM                : Rp. %d,-                         \n", bpm);
+    printf("|| Biaya Administrasi : Rp. %d,-                         \n", admin);
     printf("||                                                     \n");
     printf("|| =================================================== ||\n");
-    printf("|| Total Bayar        : Rp. %2.f                       \n", total);
+    printf("|| Total Bayar        : Rp. %2.f,-                       \n", total);
     printf("=========================================================\n");
     printf("             Tekan Enter Untuk Melanjutkan  !");
     getchar();
@@ -1655,6 +1673,7 @@ void totalBiayaD53()
         biaya = pakaiAir * 11000;
     }
     total = biaya + bpm + denda + admin;
+    system("clear");
 
     printf("=========================================================\n");
     printf("||                    Program PDAM                     ||\n");
@@ -1668,13 +1687,13 @@ void totalBiayaD53()
     printf("|| Tanggal Bayar      : Tanggal %d                     \n", tanggal);
     printf("|| Jatuh Tempo Bayar  : Tanggal %d                     \n", JATUH_TEMPO);
     printf("|| Pemakaian Air      : %2.f      M^3                  \n", pakaiAir);
-    printf("|| Biaya Air          : Rp. %2.f                       \n", biaya);
-    printf("|| Denda              : Rp. %d                         \n", denda);
-    printf("|| BPM                : Rp. %d                         \n", bpm);
-    printf("|| Biaya Administrasi : Rp. %d                         \n", admin);
+    printf("|| Biaya Air          : Rp. %2.f,-                       \n", biaya);
+    printf("|| Denda              : Rp. %d,-                         \n", denda);
+    printf("|| BPM                : Rp. %d,-                         \n", bpm);
+    printf("|| Biaya Administrasi : Rp. %d,-                         \n", admin);
     printf("||                                                     \n");
     printf("|| =================================================== ||\n");
-    printf("|| Total Bayar        : Rp. %2.f                       \n", total);
+    printf("|| Total Bayar        : Rp. %2.f,-                       \n", total);
     printf("=========================================================\n");
     printf("             Tekan Enter Untuk Melanjutkan  !");
     getchar();
@@ -1722,6 +1741,7 @@ void totalBiayaD54()
         biaya = pakaiAir * 11150;
     }
     total = biaya + bpm + denda + admin;
+    system("clear");
 
     printf("=========================================================\n");
     printf("||                    Program PDAM                     ||\n");
@@ -1735,13 +1755,13 @@ void totalBiayaD54()
     printf("|| Tanggal Bayar      : Tanggal %d                     \n", tanggal);
     printf("|| Jatuh Tempo Bayar  : Tanggal %d                     \n", JATUH_TEMPO);
     printf("|| Pemakaian Air      : %2.f      M^3                  \n", pakaiAir);
-    printf("|| Biaya Air          : Rp. %2.f                       \n", biaya);
-    printf("|| Denda              : Rp. %d                         \n", denda);
-    printf("|| BPM                : Rp. %d                         \n", bpm);
-    printf("|| Biaya Administrasi : Rp. %d                         \n", admin);
+    printf("|| Biaya Air          : Rp. %2.f,-                       \n", biaya);
+    printf("|| Denda              : Rp. %d,-                         \n", denda);
+    printf("|| BPM                : Rp. %d,-                         \n", bpm);
+    printf("|| Biaya Administrasi : Rp. %d,-                         \n", admin);
     printf("||                                                     \n");
     printf("|| =================================================== ||\n");
-    printf("|| Total Bayar        : Rp. %2.f                       \n", total);
+    printf("|| Total Bayar        : Rp. %2.f,-                       \n", total);
     printf("=========================================================\n");
     printf("             Tekan Enter Untuk Melanjutkan  !");
     getchar();
@@ -1790,6 +1810,7 @@ void totalBiayaE11()
         biaya = pakaiAir * 10950;
     }
     total = biaya + bpm + denda + admin;
+    system("clear");
 
     printf("=========================================================\n");
     printf("||                    Program PDAM                     ||\n");
@@ -1803,13 +1824,13 @@ void totalBiayaE11()
     printf("|| Tanggal Bayar      : Tanggal %d                     \n", tanggal);
     printf("|| Jatuh Tempo Bayar  : Tanggal %d                     \n", JATUH_TEMPO);
     printf("|| Pemakaian Air      : %2.f      M^3                  \n", pakaiAir);
-    printf("|| Biaya Air          : Rp. %2.f                       \n", biaya);
-    printf("|| Denda              : Rp. %d                         \n", denda);
-    printf("|| BPM                : Rp. %d                         \n", bpm);
-    printf("|| Biaya Administrasi : Rp. %d                         \n", admin);
+    printf("|| Biaya Air          : Rp. %2.f,-                       \n", biaya);
+    printf("|| Denda              : Rp. %d,-                         \n", denda);
+    printf("|| BPM                : Rp. %d,-                         \n", bpm);
+    printf("|| Biaya Administrasi : Rp. %d,-                         \n", admin);
     printf("||                                                     \n");
     printf("|| =================================================== ||\n");
-    printf("|| Total Bayar        : Rp. %2.f                       \n", total);
+    printf("|| Total Bayar        : Rp. %2.f,-                       \n", total);
     printf("=========================================================\n");
     printf("             Tekan Enter Untuk Melanjutkan  !");
     getchar();
@@ -1857,6 +1878,7 @@ void totalBiayaE12()
         biaya = pakaiAir * 11250;
     }
     total = biaya + bpm + denda + admin;
+    system("clear");
 
     printf("=========================================================\n");
     printf("||                    Program PDAM                     ||\n");
@@ -1870,13 +1892,13 @@ void totalBiayaE12()
     printf("|| Tanggal Bayar      : Tanggal %d                     \n", tanggal);
     printf("|| Jatuh Tempo Bayar  : Tanggal %d                     \n", JATUH_TEMPO);
     printf("|| Pemakaian Air      : %2.f      M^3                  \n", pakaiAir);
-    printf("|| Biaya Air          : Rp. %2.f                       \n", biaya);
-    printf("|| Denda              : Rp. %d                         \n", denda);
-    printf("|| BPM                : Rp. %d                         \n", bpm);
-    printf("|| Biaya Administrasi : Rp. %d                         \n", admin);
+    printf("|| Biaya Air          : Rp. %2.f,-                       \n", biaya);
+    printf("|| Denda              : Rp. %d,-                         \n", denda);
+    printf("|| BPM                : Rp. %d,-                         \n", bpm);
+    printf("|| Biaya Administrasi : Rp. %d,-                         \n", admin);
     printf("||                                                     \n");
     printf("|| =================================================== ||\n");
-    printf("|| Total Bayar        : Rp. %2.f                       \n", total);
+    printf("|| Total Bayar        : Rp. %2.f,-                       \n", total);
     printf("=========================================================\n");
     printf("             Tekan Enter Untuk Melanjutkan  !");
     getchar();
@@ -1924,6 +1946,7 @@ void totalBiayaE13()
         biaya = pakaiAir * 11550;
     }
     total = biaya + bpm + denda + admin;
+    system("clear");
 
     printf("=========================================================\n");
     printf("||                    Program PDAM                     ||\n");
@@ -1937,13 +1960,13 @@ void totalBiayaE13()
     printf("|| Tanggal Bayar      : Tanggal %d                     \n", tanggal);
     printf("|| Jatuh Tempo Bayar  : Tanggal %d                     \n", JATUH_TEMPO);
     printf("|| Pemakaian Air      : %2.f      M^3                  \n", pakaiAir);
-    printf("|| Biaya Air          : Rp. %2.f                       \n", biaya);
-    printf("|| Denda              : Rp. %d                         \n", denda);
-    printf("|| BPM                : Rp. %d                         \n", bpm);
-    printf("|| Biaya Administrasi : Rp. %d                         \n", admin);
+    printf("|| Biaya Air          : Rp. %2.f,-                       \n", biaya);
+    printf("|| Denda              : Rp. %d,-                         \n", denda);
+    printf("|| BPM                : Rp. %d,-                         \n", bpm);
+    printf("|| Biaya Administrasi : Rp. %d,-                         \n", admin);
     printf("||                                                     \n");
     printf("|| =================================================== ||\n");
-    printf("|| Total Bayar        : Rp. %2.f                       \n", total);
+    printf("|| Total Bayar        : Rp. %2.f,-                       \n", total);
     printf("=========================================================\n");
     printf("             Tekan Enter Untuk Melanjutkan  !");
     getchar();
@@ -1991,6 +2014,7 @@ void totalBiayaE14()
         biaya = pakaiAir * 11850;
     }
     total = biaya + bpm + denda + admin;
+    system("clear");
 
     printf("=========================================================\n");
     printf("||                    Program PDAM                     ||\n");
@@ -2004,13 +2028,13 @@ void totalBiayaE14()
     printf("|| Tanggal Bayar      : Tanggal %d                     \n", tanggal);
     printf("|| Jatuh Tempo Bayar  : Tanggal %d                     \n", JATUH_TEMPO);
     printf("|| Pemakaian Air      : %2.f      M^3                  \n", pakaiAir);
-    printf("|| Biaya Air          : Rp. %2.f                       \n", biaya);
-    printf("|| Denda              : Rp. %d                         \n", denda);
-    printf("|| BPM                : Rp. %d                         \n", bpm);
-    printf("|| Biaya Administrasi : Rp. %d                         \n", admin);
+    printf("|| Biaya Air          : Rp. %2.f,-                       \n", biaya);
+    printf("|| Denda              : Rp. %d,-                         \n", denda);
+    printf("|| BPM                : Rp. %d,-                         \n", bpm);
+    printf("|| Biaya Administrasi : Rp. %d,-                         \n", admin);
     printf("||                                                     \n");
     printf("|| =================================================== ||\n");
-    printf("|| Total Bayar        : Rp. %2.f                       \n", total);
+    printf("|| Total Bayar        : Rp. %2.f,-                       \n", total);
     printf("=========================================================\n");
     printf("             Tekan Enter Untuk Melanjutkan  !");
     getchar();
@@ -2058,6 +2082,7 @@ void totalBiayaE21()
         biaya = pakaiAir * 12150;
     }
     total = biaya + bpm + denda + admin;
+    system("clear");
 
     printf("=========================================================\n");
     printf("||                    Program PDAM                     ||\n");
@@ -2071,13 +2096,13 @@ void totalBiayaE21()
     printf("|| Tanggal Bayar      : Tanggal %d                     \n", tanggal);
     printf("|| Jatuh Tempo Bayar  : Tanggal %d                     \n", JATUH_TEMPO);
     printf("|| Pemakaian Air      : %2.f      M^3                  \n", pakaiAir);
-    printf("|| Biaya Air          : Rp. %2.f                       \n", biaya);
-    printf("|| Denda              : Rp. %d                         \n", denda);
-    printf("|| BPM                : Rp. %d                         \n", bpm);
-    printf("|| Biaya Administrasi : Rp. %d                         \n", admin);
+    printf("|| Biaya Air          : Rp. %2.f,-                       \n", biaya);
+    printf("|| Denda              : Rp. %d,-                         \n", denda);
+    printf("|| BPM                : Rp. %d,-                         \n", bpm);
+    printf("|| Biaya Administrasi : Rp. %d,-                         \n", admin);
     printf("||                                                     \n");
     printf("|| =================================================== ||\n");
-    printf("|| Total Bayar        : Rp. %2.f                       \n", total);
+    printf("|| Total Bayar        : Rp. %2.f,-                       \n", total);
     printf("=========================================================\n");
     printf("             Tekan Enter Untuk Melanjutkan  !");
     getchar();
@@ -2125,6 +2150,7 @@ void totalBiayaE22()
         biaya = pakaiAir * 12550;
     }
     total = biaya + bpm + denda + admin;
+    system("clear");
 
     printf("=========================================================\n");
     printf("||                    Program PDAM                     ||\n");
@@ -2138,13 +2164,13 @@ void totalBiayaE22()
     printf("|| Tanggal Bayar      : Tanggal %d                     \n", tanggal);
     printf("|| Jatuh Tempo Bayar  : Tanggal %d                     \n", JATUH_TEMPO);
     printf("|| Pemakaian Air      : %2.f      M^3                  \n", pakaiAir);
-    printf("|| Biaya Air          : Rp. %2.f                       \n", biaya);
-    printf("|| Denda              : Rp. %d                         \n", denda);
-    printf("|| BPM                : Rp. %d                         \n", bpm);
-    printf("|| Biaya Administrasi : Rp. %d                         \n", admin);
+    printf("|| Biaya Air          : Rp. %2.f,-                       \n", biaya);
+    printf("|| Denda              : Rp. %d,-                         \n", denda);
+    printf("|| BPM                : Rp. %d,-                         \n", bpm);
+    printf("|| Biaya Administrasi : Rp. %d,-                         \n", admin);
     printf("||                                                     \n");
     printf("|| =================================================== ||\n");
-    printf("|| Total Bayar        : Rp. %2.f                       \n", total);
+    printf("|| Total Bayar        : Rp. %2.f,-                       \n", total);
     printf("=========================================================\n");
     printf("             Tekan Enter Untuk Melanjutkan  !");
     getchar();
@@ -2192,6 +2218,7 @@ void totalBiayaE23()
         biaya = pakaiAir * 13150;
     }
     total = biaya + bpm + denda + admin;
+    system("clear");
 
     printf("=========================================================\n");
     printf("||                    Program PDAM                     ||\n");
@@ -2205,13 +2232,13 @@ void totalBiayaE23()
     printf("|| Tanggal Bayar      : Tanggal %d                     \n", tanggal);
     printf("|| Jatuh Tempo Bayar  : Tanggal %d                     \n", JATUH_TEMPO);
     printf("|| Pemakaian Air      : %2.f      M^3                  \n", pakaiAir);
-    printf("|| Biaya Air          : Rp. %2.f                       \n", biaya);
-    printf("|| Denda              : Rp. %d                         \n", denda);
-    printf("|| BPM                : Rp. %d                         \n", bpm);
-    printf("|| Biaya Administrasi : Rp. %d                         \n", admin);
+    printf("|| Biaya Air          : Rp. %2.f,-                       \n", biaya);
+    printf("|| Denda              : Rp. %d,-                         \n", denda);
+    printf("|| BPM                : Rp. %d,-                         \n", bpm);
+    printf("|| Biaya Administrasi : Rp. %d,-                         \n", admin);
     printf("||                                                     \n");
     printf("|| =================================================== ||\n");
-    printf("|| Total Bayar        : Rp. %2.f                       \n", total);
+    printf("|| Total Bayar        : Rp. %2.f,-                       \n", total);
     printf("=========================================================\n");
     printf("             Tekan Enter Untuk Melanjutkan  !");
     getchar();
@@ -2259,6 +2286,7 @@ void totalBiayaE24()
         biaya = pakaiAir * 13950;
     }
     total = biaya + bpm + denda + admin;
+    system("clear");
 
     printf("=========================================================\n");
     printf("||                    Program PDAM                     ||\n");
@@ -2272,13 +2300,13 @@ void totalBiayaE24()
     printf("|| Tanggal Bayar      : Tanggal %d                     \n", tanggal);
     printf("|| Jatuh Tempo Bayar  : Tanggal %d                     \n", JATUH_TEMPO);
     printf("|| Pemakaian Air      : %2.f      M^3                  \n", pakaiAir);
-    printf("|| Biaya Air          : Rp. %2.f                       \n", biaya);
-    printf("|| Denda              : Rp. %d                         \n", denda);
-    printf("|| BPM                : Rp. %d                         \n", bpm);
-    printf("|| Biaya Administrasi : Rp. %d                         \n", admin);
+    printf("|| Biaya Air          : Rp. %2.f,-                       \n", biaya);
+    printf("|| Denda              : Rp. %d,-                         \n", denda);
+    printf("|| BPM                : Rp. %d,-                         \n", bpm);
+    printf("|| Biaya Administrasi : Rp. %d,-                         \n", admin);
     printf("||                                                     \n");
     printf("|| =================================================== ||\n");
-    printf("|| Total Bayar        : Rp. %2.f                       \n", total);
+    printf("|| Total Bayar        : Rp. %2.f,-                       \n", total);
     printf("=========================================================\n");
     printf("             Tekan Enter Untuk Melanjutkan  !");
     getchar();
@@ -2326,6 +2354,7 @@ void totalBiayaE31()
         biaya = pakaiAir * 14750;
     }
     total = biaya + bpm + denda + admin;
+    system("clear");
 
     printf("=========================================================\n");
     printf("||                    Program PDAM                     ||\n");
@@ -2339,13 +2368,13 @@ void totalBiayaE31()
     printf("|| Tanggal Bayar      : Tanggal %d                     \n", tanggal);
     printf("|| Jatuh Tempo Bayar  : Tanggal %d                     \n", JATUH_TEMPO);
     printf("|| Pemakaian Air      : %2.f      M^3                  \n", pakaiAir);
-    printf("|| Biaya Air          : Rp. %2.f                       \n", biaya);
-    printf("|| Denda              : Rp. %d                         \n", denda);
-    printf("|| BPM                : Rp. %d                         \n", bpm);
-    printf("|| Biaya Administrasi : Rp. %d                         \n", admin);
+    printf("|| Biaya Air          : Rp. %2.f,-                       \n", biaya);
+    printf("|| Denda              : Rp. %d,-                         \n", denda);
+    printf("|| BPM                : Rp. %d,-                         \n", bpm);
+    printf("|| Biaya Administrasi : Rp. %d,-                         \n", admin);
     printf("||                                                     \n");
     printf("|| =================================================== ||\n");
-    printf("|| Total Bayar        : Rp. %2.f                       \n", total);
+    printf("|| Total Bayar        : Rp. %2.f,-                       \n", total);
     printf("=========================================================\n");
     printf("             Tekan Enter Untuk Melanjutkan  !");
     getchar();
@@ -2393,6 +2422,7 @@ void totalBiayaE32()
         biaya = pakaiAir * 15050;
     }
     total = biaya + bpm + denda + admin;
+    system("clear");
 
     printf("=========================================================\n");
     printf("||                    Program PDAM                     ||\n");
@@ -2406,13 +2436,13 @@ void totalBiayaE32()
     printf("|| Tanggal Bayar      : Tanggal %d                     \n", tanggal);
     printf("|| Jatuh Tempo Bayar  : Tanggal %d                     \n", JATUH_TEMPO);
     printf("|| Pemakaian Air      : %2.f      M^3                  \n", pakaiAir);
-    printf("|| Biaya Air          : Rp. %2.f                       \n", biaya);
-    printf("|| Denda              : Rp. %d                         \n", denda);
-    printf("|| BPM                : Rp. %d                         \n", bpm);
-    printf("|| Biaya Administrasi : Rp. %d                         \n", admin);
+    printf("|| Biaya Air          : Rp. %2.f,-                       \n", biaya);
+    printf("|| Denda              : Rp. %d,-                         \n", denda);
+    printf("|| BPM                : Rp. %d,-                         \n", bpm);
+    printf("|| Biaya Administrasi : Rp. %d,-                         \n", admin);
     printf("||                                                     \n");
     printf("|| =================================================== ||\n");
-    printf("|| Total Bayar        : Rp. %2.f                       \n", total);
+    printf("|| Total Bayar        : Rp. %2.f,-                       \n", total);
     printf("=========================================================\n");
     printf("             Tekan Enter Untuk Melanjutkan  !");
     getchar();
@@ -2460,6 +2490,7 @@ void totalBiayaE33()
         biaya = pakaiAir * 15850;
     }
     total = biaya + bpm + denda + admin;
+    system("clear");
 
     printf("=========================================================\n");
     printf("||                    Program PDAM                     ||\n");
@@ -2473,13 +2504,13 @@ void totalBiayaE33()
     printf("|| Tanggal Bayar      : Tanggal %d                     \n", tanggal);
     printf("|| Jatuh Tempo Bayar  : Tanggal %d                     \n", JATUH_TEMPO);
     printf("|| Pemakaian Air      : %2.f      M^3                  \n", pakaiAir);
-    printf("|| Biaya Air          : Rp. %2.f                       \n", biaya);
-    printf("|| Denda              : Rp. %d                         \n", denda);
-    printf("|| BPM                : Rp. %d                         \n", bpm);
-    printf("|| Biaya Administrasi : Rp. %d                         \n", admin);
+    printf("|| Biaya Air          : Rp. %2.f,-                       \n", biaya);
+    printf("|| Denda              : Rp. %d,-                         \n", denda);
+    printf("|| BPM                : Rp. %d,-                         \n", bpm);
+    printf("|| Biaya Administrasi : Rp. %d,-                         \n", admin);
     printf("||                                                     \n");
     printf("|| =================================================== ||\n");
-    printf("|| Total Bayar        : Rp. %2.f                       \n", total);
+    printf("|| Total Bayar        : Rp. %2.f,-                       \n", total);
     printf("=========================================================\n");
     printf("             Tekan Enter Untuk Melanjutkan  !");
     getchar();
@@ -2527,7 +2558,7 @@ void totalBiayaE34()
         biaya = pakaiAir * 16650;
     }
     total = biaya + bpm + denda + admin;
-
+    system("clear");
     printf("=========================================================\n");
     printf("||                    Program PDAM                     ||\n");
     printf("||               PT.Blangkon Sejahtera                 ||\n");
@@ -2540,13 +2571,13 @@ void totalBiayaE34()
     printf("|| Tanggal Bayar      : Tanggal %d                     \n", tanggal);
     printf("|| Jatuh Tempo Bayar  : Tanggal %d                     \n", JATUH_TEMPO);
     printf("|| Pemakaian Air      : %2.f      M^3                  \n", pakaiAir);
-    printf("|| Biaya Air          : Rp. %2.f                       \n", biaya);
-    printf("|| Denda              : Rp. %d                         \n", denda);
-    printf("|| BPM                : Rp. %d                         \n", bpm);
-    printf("|| Biaya Administrasi : Rp. %d                         \n", admin);
+    printf("|| Biaya Air          : Rp. %2.f,-                       \n", biaya);
+    printf("|| Denda              : Rp. %d,-                         \n", denda);
+    printf("|| BPM                : Rp. %d,-                         \n", bpm);
+    printf("|| Biaya Administrasi : Rp. %d,-                         \n", admin);
     printf("||                                                     \n");
     printf("|| =================================================== ||\n");
-    printf("|| Total Bayar        : Rp. %2.f                       \n", total);
+    printf("|| Total Bayar        : Rp. %2.f,-                       \n", total);
     printf("=========================================================\n");
     printf("             Tekan Enter Untuk Melanjutkan  !");
     getchar();
@@ -2562,8 +2593,15 @@ float pemakaianAir()
     printf("||                   Pemakaian Air                    ||\n");
     printf("========================================================\n");
     Input(&bulanLalu, "   Masukkan pemakaian bulan lalu (M^3)  : ");
+ulang:
     Input(&bulanIni, "   Masukkan pemakaian bulan ini (M^3)  : ");
+    if (bulanIni < bulanLalu)
+    {
+        printf("Pemakaian Bulan ini tidak boleh lebih kecil dari bulan lalu ! \n");
+        goto ulang;
+    }
     pakaiAir = bulanIni - bulanLalu;
+
     return pakaiAir;
 }
 
@@ -2573,7 +2611,6 @@ void is()
     printf("========================================================\n");
     printf("||       Maaf Input anda salah, Silahkan ulangi !     ||\n");
     printf("========================================================\n");
-    getchar();
 }
 
 // fungsi untuk mengulang program
@@ -2587,7 +2624,7 @@ void cobaLagi()
     printf("|| 1. Iya                                         ||\n");
     printf("|| 2. Tidak                                       ||\n");
     printf("====================================================\n");
-    range_Validasi_Int(&pilih, 1, 2, "\n   Pilihan Anda: ");
+    range_Validasi_Int(&pilih, 1, 2, "\n   Pilihan Anda : ");
     switch (pilih)
     {
     case 1:
