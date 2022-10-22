@@ -2594,7 +2594,7 @@ float pemakaianAir()
     printf("========================================================\n");
     Input(&bulanLalu, "   Masukkan pemakaian bulan lalu (M^3)  : ");
 ulang:
-    Input(&bulanIni, "   Masukkan pemakaian bulan ini (M^3)  : ");
+    Input(&bulanIni, "   Masukkan pemakaian bulan ini  (M^3)  : ");
     if (bulanIni < bulanLalu)
     {
         printf("Pemakaian Bulan ini tidak boleh lebih kecil dari bulan lalu ! \n");
