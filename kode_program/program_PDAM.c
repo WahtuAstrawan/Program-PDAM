@@ -23,6 +23,13 @@ int validasi_Int(), pilihListrik();
 
 float validasi_Float(), pemakaianAir();
 
+// program utama
+int main()
+{
+    namaProgram();
+    return 0;
+}
+
 // validasi float
 void Input(float *var, char *nama)
 {
@@ -105,12 +112,6 @@ void range_Validasi_Int(int *var, int range1, int range2, char *nama)
     }
 }
 
-// program utama
-int main()
-{
-    namaProgram();
-    return 0;
-}
 // intro
 void namaProgram()
 {
