@@ -236,7 +236,7 @@ void menuRT()
         }
         break;
     case 3:
-        listrik3 == pilihListrik();
+        listrik3 = pilihListrik();
         if (listrik3 == 1)
         {
             totalBiayaD31();
@@ -255,7 +255,7 @@ void menuRT()
         }
         break;
     case 4:
-        listrik4 == pilihListrik();
+        listrik4 = pilihListrik();
         if (listrik4 == 1)
         {
             totalBiayaD41();
@@ -274,7 +274,7 @@ void menuRT()
         }
         break;
     case 5:
-        listrik5 == pilihListrik();
+        listrik5 = pilihListrik();
         if (listrik5 == 1)
         {
             totalBiayaD51();
@@ -359,7 +359,7 @@ void menuUsaha()
         }
         break;
     case 3:
-        listrik3 == pilihListrik();
+        listrik3 = pilihListrik();
         if (listrik3 == 1)
         {
             totalBiayaE31();
